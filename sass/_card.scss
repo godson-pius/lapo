@@ -1,0 +1,201 @@
+/*----------------------------------------*/
+/*  Safe Deposit Area CSS
+/*----------------------------------------*/
+.safe-deposit-area {
+  .card-img {
+    position: relative;
+    z-index: 1;
+    .logo {
+      img {
+        position: absolute;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation: pulse 2s linear infinite;
+        &:nth-child(1) {
+          left: -15%;
+          top: 25%;
+        }
+        &:nth-child(2) {
+          right: 10%;
+          top: 5%;
+          animation-delay: 1s;
+        }
+      }
+    }
+    .bg-img {
+      position: absolute;
+      bottom: -136px;
+      left: -17%;
+      z-index: -1;
+    }
+  }
+  .border-left {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background-color: $primary-color;
+    }
+  }
+  .payment-system {
+    h5 {
+      font-size: 20px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+    }
+    p {
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-text-color;
+    }
+  }
+}
+/*----------------------------------------*/
+/*  Customize Card Area CSS
+  /*----------------------------------------*/
+
+.customize-card-area {
+  overflow: hidden;
+  .card-img {
+    position: relative;
+
+    div {
+      position: absolute;
+    }
+    .shape-1 {
+      top: 125px;
+      z-index: 3;
+      left: 0;
+    }
+    .shape-2 {
+      top: 120px;
+      left: 57px;
+      z-index: 2;
+    }
+    .shape-3 {
+      top: 0px;
+      left: 100px;
+      z-index: 1;
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*  Why Choose Us Area CSS
+  /*----------------------------------------*/
+.why-choose-area {
+  background: #10121c;
+  .section-title {
+    h2 {
+      color: #fff;
+    }
+    p {
+      color: #c8ccd0;
+    }
+  }
+  .content-box {
+    text-align: center;
+    position: relative;
+    .line-shape {
+      position: absolute;
+      left: 50%;
+      top: 26%;
+      transform: translate(-50%, -50%);
+    }
+    h4 {
+      font-size: 24px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      line-height: 30px;
+      color: #fff;
+    }
+    p {
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: #c8ccd0;
+    }
+  }
+}
+/*----------------------------------------*/
+/* Credit Card Box widget CSS
+  /*----------------------------------------*/
+.credit-card-box-widget {
+  padding: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #dcdee0;
+  background-color: #fff;
+  transition: all 0.3s ease-out;
+  &:hover {
+    box-shadow: 0 20px 45px 0 rgba(#334d72, 15%);
+  }
+  img {
+    border-radius: 8px;
+  }
+  .card-content {
+    padding: 30px 20px;
+    h4 {
+      font-size: 24px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+    }
+    P {
+      span {
+        margin-right: 15px;
+      }
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-title-color;
+      line-height: 35px;
+    }
+    a {
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $primary-color;
+      position: relative;
+      display: inline-block;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 0px;
+        height: 1px;
+        background-color: $primary-color;
+        transition: all 0.3s ease-out;
+        left: 0;
+      }
+      &:hover {
+        &::after {
+          width: 80px;
+        }
+      }
+      i {
+        font-size: 18px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/*----------------------------------------*/
+/* Market Place Area CSS
+  /*----------------------------------------*/
+.mplace-logo {
+  p {
+    font-size: 16px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: $theme-text-color;
+    line-height: 28px;
+  }
+}

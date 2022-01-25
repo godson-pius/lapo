@@ -1,0 +1,532 @@
+/*----------------------------------------*/
+/*  Fast Security and Easy Loan CSS
+/*----------------------------------------*/
+
+.fast-e-loan {
+  .apply-topics {
+    ul {
+      li {
+        font-size: 16px;
+        color: $theme-text-color;
+        margin-top: 23px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        line-height: 26px;
+        i {
+          margin-right: 8px;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .learn-more {
+    ul {
+      li {
+        span {
+          color: $primary-color;
+          margin-right: 8px;
+        }
+        background-color: #f5f7fa;
+        color: #6a737c;
+        font-size: 14px;
+        font-family: $Roboto-font;
+        border-radius: 4px;
+        padding: 8px 20px 11px 18px;
+        box-shadow: 0 0.5px 1px 0 rgba(#334d72, 10%),
+          0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+/*   Manage Corporate Finace CSS
+  /*----------------------------------------*/
+
+.manage-c-finance {
+  background-color: #e6f2f0;
+}
+
+/*----------------------------------------*/
+/*   How It Works CSS
+  /*----------------------------------------*/
+
+.how-it-work {
+  .single-widget {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.5px 1px 0 rgba(#334d72, 10%),
+      0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+    &.consultation {
+      .widget-header {
+        background-color: #2f3337;
+      }
+
+      .widget-content {
+        li {
+          &.active {
+            .text {
+              color: $theme-title-color;
+            }
+            .number {
+              box-shadow: 0 5px 15px 0 rgba(#3c4146, 30%);
+              background-color: #2f3337;
+            }
+          }
+
+          .number {
+            background-color: #9199a1;
+          }
+        }
+      }
+    }
+
+    .widget-header {
+      background-color: $primary-color;
+      display: flex;
+      padding: 25px 40px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      align-items: center;
+      .widget-img {
+        margin-right: 30px;
+        max-width: 100%;
+      }
+      .widget-title {
+        h4 {
+          font-size: 24px;
+          color: #fff;
+          font-family: $Poppins-font;
+          font-weight: 600;
+          margin-bottom: 7px;
+        }
+        p {
+          font-size: 16px;
+          color: #fff;
+          font-family: $Roboto-font;
+        }
+      }
+    }
+
+    .widget-content {
+      background-color: #fff;
+      padding: 20px 40px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 78px;
+        left: 57px;
+        bottom: 78px;
+        border-left: 1px dashed #cacccf;
+      }
+
+      li {
+        transition: all 0.3s ease-out;
+        margin: 50px 0;
+        display: flex;
+        align-items: center;
+        &.active {
+          color: $theme-title-color;
+          .text {
+            font-family: $Roboto-font;
+            font-weight: 500;
+            color: $theme-title-color;
+          }
+          .number {
+            box-shadow: 0 5px 15px 0 rgba(#1455a6, 30%);
+            background-color: $primary-color;
+          }
+        }
+        .text {
+          color: #a8a8b2;
+          font-size: 18px;
+          font-family: $Roboto-font;
+          font-weight: 400;
+        }
+        .number {
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          background-color: #7a9fcc;
+          color: #fff;
+          font-size: 18px;
+          font-family: $Roboto-font;
+          font-weight: 400;
+          display: inline-block;
+          text-align: center;
+          line-height: 35px;
+          margin-right: 20px;
+          transition: all 0.3s ease-out;
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*  Security Tips CSS
+  /*----------------------------------------*/
+
+.security-area {
+  .security-priority {
+    background-image: url(../img/security-tips/shape.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    .shapes {
+      img {
+        position: absolute;
+
+        animation: pulse 1.5s ease-out infinite alternate both;
+        &:nth-child(1) {
+          top: 15%;
+          left: 15%;
+          animation: floatingBubble 15s linear infinite alternate both;
+        }
+        &:nth-child(2) {
+          top: 25%;
+          left: 40%;
+          animation: moveX 15s linear infinite alternate both;
+        }
+        &:nth-child(3) {
+          right: 35%;
+          top: 15%;
+          animation: moveY 15s linear infinite alternate both;
+        }
+        &:nth-child(4) {
+          top: 0%;
+          right: 10%;
+        }
+        &:nth-child(5) {
+          top: 35%;
+          left: 60%;
+          animation: floatingBubble2 15s linear infinite alternate both;
+        }
+        &:nth-child(6) {
+          bottom: 0%;
+          left: 15%;
+        }
+        &:nth-child(7) {
+          bottom: 25%;
+          right: 10%;
+          animation: moveY 15s linear infinite alternate both;
+        }
+        &:nth-child(8) {
+          top: 5%;
+          left: 0%;
+          opacity: 0.1;
+          animation: none;
+        }
+        &:nth-child(9) {
+          bottom: 20%;
+          right: 0%;
+          opacity: 0.1;
+          animation: none;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #fff;
+      font-family: $Poppins-font;
+      font-weight: 600;
+    }
+    p {
+      font-size: 18px;
+      color: #d8dce0;
+      font-family: $Roboto-font;
+      font-weight: 400;
+
+      a {
+        font-family: $Poppins-font;
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}
+
+.single-security-widget {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 0.5px 1px 0 rgba(#334d72, 10%),
+    0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+
+  &:hover {
+    box-shadow: 0 20px 45px 0 rgba(#334d72, 10%);
+  }
+
+  img {
+    min-height: 235px;
+  }
+  .round-15 {
+    border-radius: 15px;
+  }
+  .round-10 {
+    border-radius: 10px;
+  }
+
+  .security-content {
+    padding: 30px;
+    h4 {
+      font-family: $Poppins-font;
+      font-weight: 700;
+      font-size: 30px;
+      color: $theme-title-color;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-text-color;
+    }
+  }
+
+  .security-content-2 {
+    padding: 20px;
+    p {
+      font-size: 17px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+      margin-bottom: 10px;
+    }
+
+    .tips-title {
+      display: block;
+      color: $theme-text-color;
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+    }
+  }
+}
+/*----------------------------------------*/
+/*  Help Ad Area CSS
+/*----------------------------------------*/
+
+.help-ad-area {
+  .main-img {
+    border-radius: 10px;
+  }
+  .offers {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: $theme-dropshadow;
+    position: relative;
+    display: inline-block;
+    transform: translate(-50px, -65px);
+    z-index: 1;
+    .shape {
+      position: absolute;
+      left: 97%;
+      bottom: -8px;
+      z-index: -1;
+    }
+    ul {
+      border-radius: 8px;
+      padding: 33px 40px;
+      position: relative;
+      z-index: 1;
+      background-color: #fff;
+      li {
+        font-size: 16px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        color: $theme-text-color;
+        margin: 8px 0;
+        span {
+          height: 25px;
+          width: 25px;
+          background-color: rgba(#f6a609, 25%);
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 10px;
+          text-align: center;
+          i {
+            font-size: 14px;
+            vertical-align: middle;
+            color: $theme-title-color;
+          }
+        }
+      }
+    }
+  }
+  p {
+    font-size: 16px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: #6a737c;
+  }
+}
+
+/*----------------------------------------*/
+/*  Banca Corporate Area CSS
+  /*----------------------------------------*/
+
+.banca-corporate {
+  .section-title {
+    p {
+      font-size: 18px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-title-color;
+      max-width: 460px;
+      margin: auto;
+      span {
+        font-size: 22px;
+        font-family: $Poppins-font;
+        font-weight: 600;
+        color: $theme-title-color;
+      }
+    }
+  }
+
+  .single-brand {
+    display: inline-block;
+    transition: all 0.3s ease-out;
+    box-shadow: none;
+    &:hover {
+      box-shadow: $theme-dropshadow;
+    }
+  }
+}
+/*----------------------------------------*/
+/*  Email Alert CSS
+/*----------------------------------------*/
+.email-alert-widget {
+  padding: 53px 69px;
+  border-radius: 10px;
+  box-shadow: $theme-dropshadow;
+  text-align: center;
+  transition: all 0.3s ease-out;
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(#334d72, 10%);
+  }
+  h4 {
+    font-size: 24px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 600;
+  }
+  p {
+    font-size: 18px;
+    color: #6a737c;
+    font-family: $Roboto-font;
+    font-weight: 400;
+  }
+
+  .form-control {
+    height: 60px;
+    padding-left: 30px;
+    font-size: 16px;
+    color: #a8a8b2;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    &::placeholder {
+      font-size: 16px;
+      color: #a8a8b2;
+    }
+  }
+
+  .input-group-append {
+    .theme-btn {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*  Our Offer CSS
+  /*----------------------------------------*/
+.our-offer {
+  .single-offer-box {
+    padding: 50px;
+    box-shadow: $theme-dropshadow;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+    &:hover {
+      box-shadow: 0 10px 30px 0 rgba(#334d72, 12%);
+    }
+    h2 {
+      font-size: 36px;
+      font-family: $Roboto-font;
+      font-weight: 700;
+      color: $theme-title-color;
+      text-transform: capitalize;
+    }
+    p {
+      font-size: 18px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-text-color;
+      margin: 23px 0 35px 0;
+    }
+    a {
+      font-size: 16px;
+      display: inline-block;
+      font-family: $Roboto-font;
+      font-weight: 500;
+      color: $primary-color;
+      position: relative;
+      text-transform: capitalize;
+
+      &:hover {
+        span {
+          &::after {
+            opacity: 1;
+            visibility: visible;
+            top: 100%;
+          }
+        }
+      }
+      span {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 1.5px;
+          width: 100%;
+          top: 125%;
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease-out;
+          background-color: $primary-color;
+        }
+      }
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 3px;
+      }
+    }
+  }
+}

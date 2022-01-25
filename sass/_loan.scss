@@ -1,0 +1,707 @@
+/*----------------------------------------*/
+/*   Steps widget CSS
+/*----------------------------------------*/
+.steps-widget {
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+  h4 {
+    margin: 25px 0 12px 0;
+    a {
+      color: $theme-title-color;
+      font-size: 24px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      display: inline-block;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  p {
+    font-size: 16px;
+    color: $theme-text-color;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    line-height: 26px;
+  }
+}
+
+/*----------------------------------------*/
+/*   Loan Apply widget CSS
+/*----------------------------------------*/
+.loan-apply-widget {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 20px 20px 25px;
+  border-radius: 4px;
+  box-shadow: $theme-dropshadow;
+  border-bottom: 2px solid transparent;
+  background-color: #fff;
+  transition: all 0.3s ease-out;
+  position: relative;
+
+  &:hover {
+    border-color: $primary-color;
+    .icon {
+      img {
+        display: none;
+
+        & + img {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .icon {
+    padding-right: 20px;
+    img {
+      display: block;
+
+      & + img {
+        display: none;
+      }
+    }
+  }
+  .security-info {
+    font-size: 12px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: #6a737c;
+  }
+  .apply-content {
+    width: 100%;
+    .title {
+      color: #6a737c;
+      font-size: 14px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      display: block;
+      margin-bottom: 4px;
+      line-height: 22px;
+    }
+    p {
+      font-size: 16px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+    }
+    .input-field {
+      position: relative;
+
+      .close {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+      }
+    }
+    input {
+      border: none;
+      outline: none;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      font-size: 16px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+      background-color: transparent;
+
+      &::placeholder {
+        font-family: $Roboto-font;
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+
+    .nice-select {
+      border: none;
+      width: 100%;
+      background-color: transparent;
+      padding: 0 !important;
+      height: inherit;
+      line-height: inherit;
+      position: inherit;
+      &::after {
+        display: none;
+      }
+      &.open {
+        .current::after {
+          -webkit-transform: translateY(-50%) rotate(-180deg);
+          -ms-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
+        }
+      }
+      .current {
+        font-size: 16px;
+        font-family: $Roboto-font;
+        font-weight: 500;
+        color: $theme-title-color;
+        position: relative;
+        display: block;
+        &::after {
+          font-family: "ElegantIcons";
+          content: "\33";
+          line-height: 1;
+          font-size: 18px;
+          display: block;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transition: all 0.15s ease-in-out;
+          transition: all 0.15s ease-in-out;
+          color: #171d24;
+        }
+      }
+      .list {
+        right: 0;
+      }
+    }
+  }
+
+  .select-location {
+    input {
+      &.es-input {
+        background: none;
+      }
+    }
+
+    .close {
+      cursor: pointer;
+      font-size: 18px;
+      color: #171d24;
+    }
+    .es-list {
+      margin-top: 23px;
+    }
+  }
+}
+
+.apply-loan-area {
+  font-size: 12px;
+  font-family: $Roboto-font;
+  font-weight: 400;
+  color: $theme-text-color;
+}
+.es-list {
+  scrollbar-color: #dededee7 #f1f1f1da;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1da;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #dededee7;
+    border-radius: 5px;
+  }
+}
+
+/*----------------------------------------*/
+/*   Calculaor widget CSS
+  /*----------------------------------------*/
+.calculator-widget {
+  .single-calculator-widget {
+    padding: 42px 50px;
+    border: 1px solid #dcdee0;
+    border-radius: 10px;
+    .single-range {
+      .range-header {
+        h6 {
+          font-size: 16px;
+          font-family: $Poppins-font;
+          font-weight: 500;
+          color: $theme-title-color;
+        }
+        input {
+          height: 37px;
+          border-radius: 4px;
+          border: 1px solid #dcdee0;
+          background-color: #fff;
+          font-size: 18px;
+          font-family: $Roboto-font;
+          font-weight: 500;
+          color: $theme-text-color;
+          font-weight: 500;
+          width: 150px;
+          text-align: center;
+          &:focus {
+            border-color: #0050b2;
+          }
+        }
+      }
+
+      .nav-tabs {
+        background-color: rgba(#0050b2, 10%);
+        border-radius: 15px;
+        overflow: hidden;
+        border: none;
+        position: relative;
+        z-index: 1;
+        .active_bar {
+          position: absolute;
+          height: 29px;
+          left: 95px;
+          width: 81px;
+          border-radius: 15px;
+          background-color: $primary-color;
+          top: 0;
+          z-index: -1;
+          transition: all 0.3s ease-out;
+
+          &.left {
+            width: 95px;
+            left: 0;
+          }
+        }
+        .nav-item {
+          border: none;
+          .nav-link {
+            border-radius: 15px;
+            font-size: 16px;
+            font-family: $Roboto-font;
+            font-weight: 400;
+            height: 30px;
+            line-height: 29px;
+            padding: 0 25px;
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+            color: $theme-text-color;
+            transition: all 0.3s ease-out;
+            position: relative;
+            z-index: 1;
+            &.active {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .interestBox {
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid #dcdee0;
+
+    p {
+      font-family: $Poppins-font;
+      font-weight: 500;
+      font-size: 16px;
+      color: $theme-title-color;
+    }
+    span {
+      font-family: $Roboto-font;
+      font-weight: 700;
+      font-size: 16px;
+      color: $primary-color;
+      margin-top: 10px;
+      display: inline-block;
+    }
+  }
+  .calculator-result-widget {
+    padding: 50px 45px;
+    border: 1px solid #dcdee0;
+    border-radius: 10px;
+
+    h6 {
+      font-family: $Poppins-font;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      color: $theme-title-color;
+      margin: 0;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: -16px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+      }
+    }
+    span {
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-text-color;
+      font-size: 14px;
+    }
+    p {
+      font-family: $Roboto-font;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .emi-amount {
+      h6 {
+        &::before {
+          background-color: $primary-color;
+        }
+      }
+      p {
+        color: $primary-color;
+      }
+    }
+    .interest-payable {
+      h6 {
+        &::before {
+          background-color: #a924fa;
+        }
+      }
+      p {
+        color: #a924fa;
+      }
+    }
+    h4 {
+      font-family: $Poppins-font;
+      font-weight: 600;
+      font-size: 24px;
+      color: $theme-text-color;
+    }
+    h1 {
+      font-size: 40px;
+      color: $theme-title-color;
+      font-family: $Roboto-font;
+      font-weight: 700;
+    }
+  }
+
+  .radial-progress {
+    height: auto;
+    padding: 0;
+    transform: rotate(-65deg);
+    width: 100%;
+    circle {
+      // stroke-dashoffset: 219.91148575129; /* Circumference */
+      stroke-width: 8;
+      fill: transparent;
+      &.incomplete {
+        stroke: #0050b2;
+      }
+      &.complete {
+        stroke-width: 7;
+        stroke: #a924fa;
+        stroke-dasharray: 188.49555921538757;
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+/*   Stepper widget CSS
+  /*----------------------------------------*/
+.stepper-widget {
+  ul {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      bottom: 10px;
+      z-index: -1;
+      border-left: 2px solid #dcdee0;
+    }
+
+    li {
+      margin: 60px 0;
+      position: relative;
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        bottom: -35px;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: #dcdee0;
+      }
+
+      &.complete {
+        a {
+          color: $theme-text-color;
+          .number {
+            background-color: #fff;
+            border-color: #2ac769;
+            span {
+              display: none;
+            }
+            i {
+              color: #2ac769;
+              display: block;
+            }
+          }
+        }
+      }
+      &.active {
+        a {
+          color: $primary-color;
+          font-family: $Roboto-font;
+          font-weight: 500;
+          .number {
+            background-color: $primary-color;
+            border: none;
+            color: #fff;
+            span {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        font-size: 18px;
+        color: #9199a1;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        .number {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          background-color: #f5f7fa;
+          border: 1.5px solid #dcdee0;
+          text-align: center;
+          line-height: 29px;
+          display: inline-block;
+          margin-right: 15px;
+          span {
+            color: $theme-text-color;
+            font-family: $Roboto-font;
+            font-weight: 400;
+            font-size: 16px;
+          }
+
+          i {
+            display: none;
+            font-size: 16px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+/*   Loan Details Widget CSS
+/*----------------------------------------*/
+.loan-details-widget {
+  padding: 50px 53px;
+  box-shadow: $theme-dropshadow;
+  border-radius: 10px;
+  padding-bottom: 100px;
+  .select-loan-type-radio {
+    display: none;
+    &:checked {
+      & ~ .loan-type {
+        background-color: $primary-color;
+        cursor: pointer;
+        span {
+          color: #fff;
+        }
+        img {
+          display: none;
+          & + img {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  .loan-type {
+    background-color: rgba(#0050b2, 5%);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease-out;
+    display: block;
+
+    &:hover {
+      background-color: $primary-color;
+      cursor: pointer;
+      span {
+        color: #fff;
+      }
+      img {
+        display: none;
+        & + img {
+          display: inline-block;
+        }
+      }
+    }
+
+    span {
+      display: block;
+      font-family: $Roboto-font;
+      font-weight: 500;
+      color: $theme-title-color;
+      font-size: 16px;
+      margin-top: 14px;
+      text-transform: capitalize;
+    }
+
+    img {
+      & + img {
+        display: none;
+      }
+    }
+  }
+
+  .label {
+    font-size: 16px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .form-check {
+    .form-check-label {
+      color: #9199a1;
+    }
+    .form-check-input:checked[type="radio"] {
+      ~ .form-check-label {
+        color: #6a737c;
+      }
+    }
+  }
+  .form-control {
+    border-color: #dcdee0;
+    height: 45px;
+    color: #9199a1;
+    font-size: 14px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    &::placeholder {
+      color: #9199a1;
+    }
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: none;
+    }
+  }
+  .input-field {
+    position: relative;
+    span {
+      position: absolute;
+      display: inline-block;
+      top: 12px;
+      left: 15px;
+      font-size: 14px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: #a8a8b2;
+    }
+    .form-control {
+      padding-left: 30px;
+    }
+  }
+  .iti {
+    width: 100%;
+  }
+  .nice-select {
+    height: 45px;
+    border-color: #dcdee0;
+    display: inline-block;
+    float: inherit;
+    &:focus {
+      border-color: $primary-color;
+    }
+    .current {
+      font-size: 14px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: #9199a1;
+    }
+    .list {
+      width: 100%;
+    }
+  }
+
+  .dob {
+    .nice-select {
+      margin-right: 15px;
+      width: 100%;
+      .list {
+        max-height: 350px;
+        overflow-y: scroll;
+        scrollbar-color: #dededee7 #f1f1f1da;
+        scrollbar-width: thin;
+        // width: auto;
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1da;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: #dededee7;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .nav-btn {
+    a,
+    button {
+      border-radius: 5px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-text-color;
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+        margin-bottom: 2px;
+      }
+      &.prev-btn {
+        i {
+          margin-right: 5px;
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+  .doc-info {
+    display: flex;
+    span {
+      display: inline-block;
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-title-color;
+      margin-right: 15px;
+    }
+    p {
+      display: inline-block;
+      display: inline-block;
+      font-size: 16px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-text-color;
+    }
+  }
+}

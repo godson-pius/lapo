@@ -1,0 +1,15 @@
+$Roboto-font: "Roboto", sans-serif;
+$Poppins-font: "Poppins", sans-serif;
+$Inter-font: "Inter", sans-serif;
+$theme-color: var(--theme-color);
+$theme-title-color: var(--theme-title-color);
+$theme-text-color: var(--theme-text-color);
+$primary-color: var(--primary-color);
+$theme-dropshadow: var(--theme-dropshadow);
+$theme-border-color: var(--theme-border-color);
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");

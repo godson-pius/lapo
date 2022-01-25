@@ -1,0 +1,360 @@
+:root {
+  --theme-color: #6d27e5;
+  --theme-title-color: #171d24;
+  --theme-text-color: #6a737c;
+  --primary-color: #0050b2;
+  --theme-border-color: #dde1e5;
+  --theme-dropshadow: 0 0.5px 1px 0 rgba(51, 77, 114, 0.1),
+    0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f9fa;
+}
+
+a,
+.btn,
+button,
+span,
+p,
+i,
+input,
+select,
+textarea,
+li,
+img,
+*::after,
+*::before,
+.transition-3,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+a:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button {
+  color: inherit;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+  border: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  color: #201f1f;
+  margin-top: 0px;
+  font-weight: 500;
+  line-height: 1.2;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 60px;
+}
+h2 {
+  font-size: 36px;
+  line-height: 42px;
+}
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 24px;
+  line-height: 30px;
+}
+h5 {
+  font-size: 20px;
+}
+
+.bg_white {
+  background-color: #fff !important;
+}
+.bg_primary {
+  background-color: $primary-color !important;
+}
+.bg_disable {
+  background-color: #f5f7fa !important;
+}
+
+.border-start,
+.border-end,
+.border-bottom,
+.border-top {
+  border-color: $theme-border-color !important;
+}
+
+*::-moz-selection {
+  background: $theme-color;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: $theme-color;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::selection {
+  background: $theme-color;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+input[type="number"] {
+  // appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-check {
+  .form-check-input {
+    &:checked[type="radio"] {
+      background-color: #fff;
+      border-color: $primary-color;
+      & ~ .form-check-label {
+        color: $theme-title-color;
+      }
+    }
+  }
+  .form-check-label {
+    font-size: 16px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: $theme-text-color;
+  }
+}
+.form-check-input:checked[type="radio"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.5' fill='%230050B2'/%3e%3c/svg%3e");
+}
+.form-control {
+  border-color: #dcdee0;
+  color: #a8a8b2;
+  font-size: 14px;
+  font-family: $Roboto-font;
+  font-weight: 400;
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: none;
+  }
+}
+
+.floating-input {
+  position: relative;
+  z-index: 1;
+  textarea {
+    &.form-control {
+      height: inherit;
+      padding-top: 23px;
+      padding-bottom: 23px;
+    }
+    & ~ label {
+      top: 23px;
+      transform: inherit;
+    }
+  }
+  .form-control {
+    height: 60px;
+    border-radius: 4px;
+    border: 1px solid $theme-border-color;
+    font-size: 14px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    background-color: transparent;
+    color: #848d95;
+    padding: 0 24px;
+    &::placeholder {
+      color: transparent;
+    }
+    &:not(:placeholder-shown) {
+      & ~ label {
+        top: -1px;
+        color: #848d95;
+        background-color: #f5f7fa;
+        padding: 0 4px;
+        font-size: 12px;
+        left: 24px;
+        z-index: 1;
+      }
+    }
+    &:focus {
+      background-color: transparent;
+      border-color: $primary-color;
+      & ~ label {
+        top: -1px;
+        color: $primary-color;
+        background-color: #f5f7fa;
+        padding: 0 4px;
+        font-size: 12px;
+        left: 24px;
+        z-index: 1;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+
+    font-size: 14px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: #848d95;
+    transition: all 0.3s ease-out;
+    text-transform: capitalize;
+    z-index: -1;
+  }
+}
+
+/*  section title css */
+.section-title {
+  text-align: center;
+  .short-title {
+    display: inline-block;
+    font-size: 14px;
+    color: $primary-color;
+    font-family: $Roboto-font;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+  h1 {
+    font-size: 50px;
+    color: #000;
+    font-family: $Poppins-font;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 36px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  P {
+    font-size: 16px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: #6a737c;
+    line-height: 26px;
+  }
+}
+
+/*----------------------------------------*/
+/*   Back To Top Button CSS
+/*----------------------------------------*/
+#back-to-top {
+  display: inline-block;
+  background-color: rgba(220, 220, 220, 0.8);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#back-to-top::after {
+  content: "\32";
+  font-family: eleganticons;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #000;
+}
+#back-to-top:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#back-to-top:hover::after {
+  color: #fff;
+}
+#back-to-top:active {
+  background-color: #555;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

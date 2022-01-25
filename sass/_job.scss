@@ -1,0 +1,603 @@
+/*----------------------------------------*/
+/*   SideBar CSS
+/*----------------------------------------*/
+
+.sidebar-header {
+  .sidebar-title {
+    h4 {
+      font-size: 24px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+    }
+  }
+
+  .nice-select {
+    &::after {
+      display: none;
+    }
+    &.open {
+      &::before {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+    &::before {
+      content: "\33";
+      font-family: "ElegantIcons";
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      right: 10px;
+      color: #6a737c;
+      font-size: 18px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.15s ease-in-out;
+    }
+    .current {
+      font-size: 16px;
+      color: $theme-text-color;
+      font-family: $Roboto-font;
+      font-weight: 400;
+    }
+  }
+}
+
+.right-sidebar-widget {
+  .widget-content {
+    ul {
+      li {
+        line-height: 40px;
+        span {
+          font-size: 16px;
+          color: $theme-text-color;
+        }
+        .name {
+          font-family: $Roboto-font;
+          font-weight: 500;
+          color: $theme-title-color;
+          margin-right: 5px;
+        }
+        .value {
+          font-family: $Roboto-font;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+.sticky_sidebar_widget {
+  position: sticky;
+  top: 90px;
+  left: 0;
+}
+.single-sidebar-widget {
+  border-radius: 6px;
+  background-color: #fff;
+
+  .form-check .form-check-input:checked[type="radio"] ~ .form-check-label {
+    color: $primary-color;
+  }
+
+  &.widget-shadow {
+    box-shadow: $theme-dropshadow;
+  }
+
+  &.widget-border {
+    border: 1px solid #dcdee0;
+    box-sizing: border-box;
+  }
+
+  .widget-title {
+    background-color: #dcdee0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 20px 0 20px 25px;
+    h5 {
+      font-size: 18px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: $theme-title-color;
+      margin: 0;
+    }
+  }
+
+  .form-control {
+    height: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #a8a8b2;
+    font-size: 14px;
+    font-family: $Roboto-font;
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: none;
+    }
+    &:placeholder-shown {
+      font-size: 14px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: #9199a1;
+    }
+  }
+
+  .input-search-field {
+    input {
+      padding: 0 24px;
+      color: #9199a1;
+      font-size: 14px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      &::placeholder {
+        color: #9199a1;
+        font-size: 14px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+      }
+    }
+    .btn {
+      background-color: #6a737c;
+      height: 60px;
+      vertical-align: middle;
+      padding: 19px 20px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border: none;
+      i {
+        font-size: 20px;
+        color: #fff;
+        transform: rotate(270deg);
+        display: inline-block;
+      }
+    }
+  }
+
+  .select-location {
+    position: relative;
+    .arrow-icon {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%) rotate(0);
+      i {
+        display: inline-block;
+        font-size: 20px;
+        color: #9199a1;
+      }
+    }
+
+    .es-input {
+      background-image: none;
+      // &.open {
+      //   border: 1px solid red;
+      //   & ~ {
+      //     .arrow-icon {
+      //       display: none;
+      //       transform: translateY(-50%) rotate(540deg);
+      //     }
+      //   }
+      // }
+    }
+  }
+}
+
+.catagory-list-widget {
+  .catagory-list {
+    .catagory-item {
+      .catagory-link {
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 20px 9px 52px;
+
+        font-family: $Roboto-font;
+        font-weight: 400;
+        color: $theme-text-color;
+        transition: all 0.3s ease-out;
+        line-height: 22px;
+        position: relative;
+        &::before {
+          content: "\4e";
+          font-family: "ElegantIcons";
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          font-size: 14px;
+          line-height: 1;
+          position: absolute;
+          color: $primary-color;
+          left: 20px;
+          top: 14px;
+          display: inline-block;
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.3s ease-out;
+        }
+        &.active {
+          color: $primary-color;
+
+          &::before {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        &:hover {
+          background-color: #f5f7fa;
+        }
+        .text {
+          font-size: 14px;
+        }
+        .number {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+/*  Job Details CSS
+/*----------------------------------------*/
+.job-post-widget {
+  .single-job-post {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+    box-shadow: $theme-dropshadow;
+    &:hover {
+      .job-title {
+        color: $primary-color;
+      }
+      box-shadow: 0 20px 45px 0 rgba(#334d72, 15%);
+    }
+
+    .post-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      .timestamp {
+        font-size: 14px;
+        color: $theme-text-color;
+        font-family: $Roboto-font;
+        font-weight: 400;
+      }
+    }
+
+    .post-content {
+      margin-top: 25px;
+      p {
+        font-size: 16px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        color: $theme-text-color;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.job-description-widget {
+  .single-description-para {
+    margin-top: 25px;
+
+    h6 {
+      font-size: 18px;
+      color: $theme-title-color;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      margin-bottom: 14px;
+      line-height: 29.4px;
+
+      span {
+        color: #fb4e4e;
+      }
+    }
+    p {
+      font-size: 16px;
+      color: $theme-text-color;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      line-height: 26px;
+    }
+    ul {
+      li {
+        margin-top: 7px;
+        padding-left: 28px;
+        position: relative;
+        font-size: 16px;
+        color: $theme-text-color;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        line-height: 26px;
+
+        &::before {
+          content: "\5e";
+          position: absolute;
+          top: 4px;
+          left: 0;
+          font-size: 16px;
+          color: $theme-text-color;
+          font-family: "ElegantIcons";
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+        }
+      }
+    }
+    .text_body_color {
+      color: #6c6c73;
+    }
+  }
+
+  .note-text {
+    p {
+      font-size: 18px;
+      color: #6c6c73;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 26px;
+
+      span {
+        font-size: 18px;
+        color: #45454d;
+        font-family: $Roboto-font;
+        font-weight: 700;
+        font-style: normal;
+      }
+    }
+  }
+
+  .custom-btn {
+    i {
+      transform: translate(0);
+      margin-right: 5px;
+    }
+    &:hover {
+      i {
+        transform: translate(0);
+      }
+    }
+  }
+}
+
+.job-application-modal {
+  z-index: 9999;
+  .modal-dialog {
+    max-width: 768px;
+    .modal-content {
+      border-radius: 10px;
+      border: 1px solid #dcdee0;
+      box-shadow: 0 15px 50px 0 rgba(#1456a6, 15%);
+      .modal-body {
+        padding: 50px 60px;
+
+        .theme-btn {
+          color: $theme-text-color;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .dropzone {
+      padding: 20px 0;
+      background-color: #fff;
+      border: 2px dashed #dcdee0;
+      border-radius: 5px;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+      .dz-message {
+        .dz-button {
+          font-family: $Roboto-font;
+          font-weight: 700;
+          color: $primary-color;
+          font-size: 17px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .label {
+    font-size: 16px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+
+    span {
+      color: #fb4e4e;
+    }
+  }
+  .job-title {
+    font-size: 24px;
+  }
+  .form-control {
+    height: 50px;
+  }
+  textarea {
+    height: inherit !important;
+  }
+  .support {
+    font-size: 14px;
+    color: $theme-text-color;
+    font-family: $Roboto-font;
+    font-weight: 400;
+  }
+  .iti {
+    width: 100%;
+  }
+}
+
+.modal-backdrop {
+  z-index: 9998;
+  background-color: #172d42;
+
+  &.show {
+    opacity: 20%;
+  }
+}
+
+/*----------------------------------------*/
+/*  Feature Job Post CSS
+/*----------------------------------------*/
+
+.feature-job-tab {
+  .feature-job-list {
+    display: flex;
+    border: none;
+    flex-direction: column;
+    li {
+      margin: 12px 0;
+      a {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.single-feature-job {
+  border-radius: 5px;
+  box-shadow: 0 0.3px 0.9px 0 rgba(#1455a6, 10%),
+    0 1.6px 3px 0 rgba(#1455a6, 13%);
+  background-color: #fff;
+  padding: 30px;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    box-shadow: 0 10px 30px 0 rgba(#334d72, 12%);
+    .job-title {
+      color: $primary-color;
+    }
+  }
+}
+
+.job-title {
+  font-size: 18px;
+  color: $theme-title-color;
+  font-family: $Poppins-font;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.job-location {
+  i {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #787880;
+    margin-right: 5px;
+  }
+  font-size: 14px;
+  color: #787880;
+  font-family: $Poppins-font;
+  font-weight: 400;
+}
+
+.job-catagory {
+  span {
+    color: $primary-color;
+  }
+  font-size: 14px;
+  color: #787880;
+  font-family: $Poppins-font;
+  font-weight: 400;
+}
+
+.feature-job-description {
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #dcdee0;
+  background-color: #f5f7fa;
+
+  p {
+    font-size: 16px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: #6a737c;
+    line-height: 26px;
+  }
+}
+
+/*----------------------------------------*/
+/*  Search Job CSS
+/*----------------------------------------*/
+.search-job {
+  top: 0%;
+  transform: translateY(-50%);
+  box-shadow: 0 10px 30px 0 rgba(#1456a6, 5%);
+  padding: 50px 50px 60px 50px;
+  h4 {
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 600;
+  }
+  p {
+    font-size: 18px;
+    color: $theme-text-color;
+    font-family: $Poppins-font;
+    font-weight: 500;
+  }
+
+  .search-box {
+    border: 1px solid $theme-border-color;
+    border-radius: 6px;
+
+    .input-field {
+      position: relative;
+      span {
+        position: absolute;
+        display: inline-block;
+        top: 6px;
+        left: 15px;
+        font-size: 20px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        color: #a8a8b2;
+      }
+      .form-control {
+        padding-left: 49px;
+        border: none;
+        height: 45px;
+        color: #a8a8b2;
+        font-size: 16px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        &:focus {
+          box-shadow: none;
+        }
+
+        &::placeholder {
+          color: #a8a8b2;
+          font-size: 16px;
+          font-family: $Roboto-font;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .custom-btn {
+      line-height: 48px;
+      border-radius: 6px;
+      padding: 0 40px;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}

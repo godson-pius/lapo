@@ -1,0 +1,159 @@
+/*----------------------------------------*/
+/*   Statistics widget CSS
+/*----------------------------------------*/
+.floated-widget {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 45px 0 rgba(#334d72, 15%);
+  padding: 40px 50px;
+  position: absolute;
+  top: -70px;
+  left: 15px;
+  right: 15px;
+  z-index: 3;
+}
+
+.statistics-widget-1 {
+  display: inline-block;
+  min-width: 117px;
+  img {
+    max-width: 100%;
+  }
+  p {
+    font-size: 18px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: $theme-title-color;
+    margin: 20px 0 6px 0;
+    text-transform: capitalize;
+  }
+  .counter {
+    font-size: 36px;
+    color: $theme-color;
+    font-family: $Poppins-font;
+    font-weight: 700;
+  }
+}
+
+.statistics-widget-2 {
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+
+  .statistics-slider {
+    height: 100%;
+    position: relative;
+    .slick-list {
+      height: 100%;
+      .slick-track {
+        height: 100%;
+        .slick-slide {
+          height: 100%;
+        }
+      }
+    }
+
+    .slick-dots {
+      bottom: 15px;
+
+      li {
+        button {
+          margin: 0 5px;
+          background-color: rgba(#fff, 20%);
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          border: none;
+        }
+        &.slick-active {
+          button {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .widget-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 45px 25px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 70px;
+      color: #fff;
+      font-family: $Roboto-font;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 40px;
+      color: #fff;
+      font-family: $Roboto-font;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+      color: #fff;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      margin-top: 15px;
+    }
+
+    &.widget-1 {
+      background-color: #610fc9;
+    }
+    &.widget-2 {
+      background-color: $primary-color;
+    }
+    &.widget-3 {
+      background-color: #704dff;
+    }
+    &.widget-4 {
+      background-color: #f23d68;
+    }
+    &.widget-5 {
+      background-color: #af3ce5;
+    }
+    &.widget-6 {
+      &::before {
+        background-color: rgba(#7439bf, 75%);
+      }
+    }
+
+    &.widget-7 {
+      &::before {
+        background-color: rgba(#5912b2, 75%);
+      }
+    }
+
+    &.widget-8 {
+      &::before {
+        background-color: rgba(#003f8b, 75%);
+      }
+    }
+  }
+}

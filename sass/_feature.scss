@@ -1,0 +1,771 @@
+/*----------------------------------------*/
+/*   feature CSS
+/*----------------------------------------*/
+.feature-area {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card-widget,
+.feature-card-widget-2,
+.feature-card-widget-4,
+.feature-card-widget-5,
+.feature-card-widget-6,
+.feature-card-widget-7 {
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0.5px 1px 0 rgba(#334d72, 10%),
+    0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+  transition: all 0.3s ease-out;
+  &:hover {
+    box-shadow: 0px 20px 45px rgba(#334d72, 15%);
+  }
+
+  img {
+    max-width: 100%;
+  }
+  h4 {
+    font-size: 24px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 600;
+  }
+  h5 {
+    font-size: 20px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 600;
+  }
+  p {
+    font-family: $Roboto-font;
+    font-weight: 400;
+    font-size: 16px;
+    color: $theme-text-color;
+    line-height: 26px;
+  }
+}
+
+.feature-card-widget {
+  padding: 40px 25px;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0px 20px 45px rgba(#334d72, 15%);
+
+    h4 {
+      color: $theme-color;
+    }
+  }
+  .card-img {
+    position: relative;
+    img {
+      max-width: 100%;
+      margin: 15px 0 25px 0;
+      min-height: 54px;
+    }
+  }
+
+  h4 {
+    text-transform: capitalize;
+    margin-bottom: 5px;
+  }
+  p {
+    margin: 11px 0 5px 0;
+  }
+}
+
+.feature-card-widget-2 {
+  padding: 30px 25px;
+  border-radius: 10px;
+
+  .icon-bg-1,
+  .icon-bg-2,
+  .icon-bg-3,
+  .icon-bg-4 {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .icon-bg-1 {
+    background-color: rgba(#29cc25, 10%);
+  }
+  .icon-bg-2 {
+    background-color: rgba(#be63f9, 10%);
+  }
+  .icon-bg-3 {
+    background-color: rgba(#fc573b, 10%);
+  }
+  .icon-bg-4 {
+    background-color: rgba(#26c6da, 10%);
+  }
+
+  h5 {
+    margin: 15px 0;
+  }
+  h4 {
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+  p {
+    min-height: 72px;
+    line-height: inherit;
+  }
+}
+
+.feature-card-widget-3 {
+  padding: 25px;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  position: relative;
+  margin: 0 12px;
+  outline: none;
+  .shapes {
+    img {
+      position: absolute;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+  .title {
+    font-size: 14px;
+    font-family: $Roboto-font;
+    font-weight: 400;
+    color: #fff;
+    line-height: 22px;
+    display: block;
+    margin-top: 5px;
+  }
+  h5 {
+    font-size: 22px;
+    color: #fff;
+    margin-top: 13px;
+    font-family: $Poppins-font;
+    font-weight: 400;
+    line-height: 30px;
+    span {
+      font-family: $Poppins-font;
+      font-weight: 600;
+    }
+  }
+  a {
+    font-size: 22px;
+    color: #fff;
+    font-family: $Poppins-font;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 30px;
+  }
+
+  &.card-1 {
+    background-color: #f76363;
+    &:hover {
+      box-shadow: 0 20px 50px 0 rgba(#f76363, 25%);
+    }
+    .shapes {
+      img {
+        &:nth-child(1) {
+          bottom: 0;
+          right: 20px;
+          animation: pulse 2s ease-out infinite alternate both;
+        }
+        &:nth-child(2) {
+          top: 0;
+          right: 0;
+          animation: pulse 3s ease-out infinite alternate both;
+        }
+        &:nth-child(3) {
+          top: 50%;
+          right: 40%;
+        }
+        &:nth-child(4) {
+          bottom: 60%;
+          right: 75%;
+        }
+      }
+    }
+  }
+  &.card-2 {
+    background-color: #40ad87;
+    &:hover {
+      box-shadow: 0 20px 50px 0 rgba(#40ad87, 25%);
+    }
+    .shapes {
+      img {
+        &:nth-child(1) {
+          top: 0;
+          right: 20px;
+          animation: pulse 6s ease-out infinite alternate both;
+        }
+        &:nth-child(2) {
+          bottom: 0;
+          right: 0;
+          animation: pulse 2s ease-out infinite alternate both;
+        }
+        &:nth-child(3) {
+          top: 50%;
+          right: 40%;
+          animation: moveX 13s ease-out infinite alternate both;
+        }
+        &:nth-child(4) {
+          bottom: 60%;
+          right: 75%;
+          animation: moveY 15s ease-out infinite alternate both;
+        }
+      }
+    }
+  }
+  &.card-3 {
+    background-color: #7080fa;
+    &:hover {
+      box-shadow: 0 20px 50px 0 rgba(#7080fa, 25%);
+    }
+    .shapes {
+      img {
+        &:nth-child(1) {
+          top: 0;
+          right: 0;
+          animation: pulse 2s ease-out infinite alternate both;
+        }
+        &:nth-child(2) {
+          top: 0;
+          right: 0;
+          animation: pulse 3s ease-out infinite alternate both;
+        }
+        &:nth-child(3) {
+          top: 20%;
+          right: 40%;
+          animation: moveX 13s ease-out infinite alternate both;
+        }
+        &:nth-child(4) {
+          bottom: 20%;
+          right: 20%;
+        }
+        &:nth-child(5) {
+          bottom: 10%;
+          right: 25%;
+        }
+        &:nth-child(6) {
+          left: 10%;
+          top: 15%;
+          animation: moveY 13s ease-out infinite alternate both;
+        }
+        &:nth-child(7) {
+          left: 50%;
+          top: 75%;
+          animation: moveX 13s ease-out infinite alternate both;
+        }
+      }
+    }
+  }
+}
+.feature-card-widget-4 {
+  padding: 50px 30px;
+  border-radius: 10px;
+
+  .theme-btn {
+    border-color: rgba(#0050b2, 50%);
+  }
+  .social-button {
+    a {
+      display: inline-block;
+      text-align: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: transparent;
+      color: $theme-text-color;
+      line-height: 37px;
+      border: 1px solid $theme-text-color;
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}
+.feature-card-widget-5 {
+  padding: 50px 40px;
+  padding-bottom: 43px;
+  text-align: left;
+  border-radius: 8px;
+}
+.feature-card-widget-6 {
+  display: flex;
+  padding: 38px 40px;
+  text-align: left;
+  border-radius: 10px;
+  img {
+    max-width: inherit;
+  }
+  h6 {
+    font-size: 18px;
+    color: $theme-title-color;
+    font-family: $Poppins-font;
+    font-weight: 600;
+    line-height: 16px;
+  }
+}
+.feature-card-widget-7 {
+  padding: 38px 30px 30px 30px;
+  border-radius: 5px;
+  h4 {
+    margin-bottom: 13px;
+  }
+}
+.feature-area-2 {
+  background-color: #fff;
+}
+
+.feature-widget-2 {
+  display: flex;
+  border-radius: 5px;
+  padding: 40px;
+  transition: all 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  .shapes {
+    img {
+      position: absolute;
+      z-index: -1;
+
+      animation: pulse 1.5s ease-out infinite alternate both;
+    }
+  }
+
+  &.feature-1 {
+    background-color: #7a33ff;
+
+    .shapes {
+      img {
+        &:nth-child(1) {
+          top: 0;
+          right: 0;
+        }
+        &:nth-child(2) {
+          bottom: 0;
+          left: 0;
+          animation-delay: 0.3s;
+        }
+        &:nth-child(3) {
+          top: 15%;
+          right: 35%;
+          animation: moveX 15s linear infinite alternate both;
+          animation-delay: 1.5s;
+        }
+        &:nth-child(4) {
+          bottom: 15%;
+          left: 35%;
+          animation: moveX 15s linear infinite alternate both;
+        }
+        &:nth-child(5) {
+          top: 40%;
+          left: 60%;
+          animation: floatingBubble 15s linear infinite alternate both;
+        }
+        &:nth-child(6) {
+          top: 5%;
+          right: 65%;
+
+          animation: floatingBubble2 15s linear infinite alternate both;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 20px 40px 2px rgba(#7a33ff, 20%);
+    }
+  }
+  &.feature-2 {
+    background-color: #b93dcc;
+
+    .shapes {
+      img {
+        &:nth-child(1) {
+          bottom: 0;
+          left: 0;
+          opacity: 0.1;
+          animation-delay: 0.3s;
+        }
+        &:nth-child(2) {
+          top: 0;
+          right: 0;
+          opacity: 0.1;
+        }
+        &:nth-child(3) {
+          bottom: 0%;
+          left: 35%;
+          opacity: 0.1;
+          animation-delay: 0.9s;
+        }
+        &:nth-child(4) {
+          bottom: 15%;
+          right: 70%;
+        }
+        &:nth-child(5) {
+          top: 15%;
+          left: 60%;
+          animation: moveX 15s linear infinite alternate both;
+          animation-delay: 1.1s;
+        }
+        &:nth-child(6) {
+          top: 5%;
+          right: 65%;
+          opacity: 0.1;
+          animation: moveY 15s linear infinite alternate both;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 20px 40px 2px rgba(#b93dcc, 20%);
+    }
+  }
+  &.feature-3 {
+    background-color: #247cb2;
+
+    .shapes {
+      img {
+        &:nth-child(1) {
+          bottom: 0;
+          right: 0;
+          opacity: 0.1;
+          animation-delay: 0.3s;
+        }
+        &:nth-child(2) {
+          top: 0;
+          left: 0;
+          opacity: 0.1;
+        }
+        &:nth-child(3) {
+          top: 0%;
+          left: 35%;
+          animation-delay: 0.8s;
+        }
+        &:nth-child(4) {
+          bottom: 15%;
+          right: 70%;
+          animation: floatingBubble 15s linear infinite alternate both;
+        }
+        &:nth-child(5) {
+          top: 15%;
+          left: 75%;
+          animation-delay: 0.5s;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 20px 40px 2px rgba(#247cb2, 20%);
+    }
+  }
+  .feature-img {
+    img {
+      max-width: 100%;
+      padding: 0 23px 0 10px;
+    }
+  }
+  .feature-content {
+    p {
+      font-size: 16px;
+      color: #fff;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      line-height: 26px;
+    }
+    h6 {
+      font-size: 18px;
+      color: #fff;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.feature-slider {
+  .slick-list {
+    margin: 0 -25px;
+    padding: 0 10px;
+  }
+  .slick-dots {
+    bottom: -5px;
+    li {
+      button {
+        background-color: #cacccf;
+        border: none;
+      }
+
+      &.slick-active {
+        button {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+  .slick-track {
+    margin: 20px 0 55px 0;
+  }
+}
+/*----------------------------------------*/
+/*  Feature Calculator CSS
+/*----------------------------------------*/
+
+.feature-calculator {
+  .calculator {
+    border: 1px solid #dcdee0;
+    box-shadow: $theme-dropshadow;
+    border-radius: 10px;
+    .border-end {
+      border-color: #dcdee0;
+    }
+    .border-bottom {
+      border-color: #dcdee0;
+    }
+    .steps {
+      background-color: #f5f7fa;
+      border-radius: 5px;
+      padding: 9px 20px;
+      .single-step {
+        span {
+          border-radius: 50%;
+          border: 1px solid #dcdee0;
+          height: 18px;
+          width: 18px;
+          font-size: 12px;
+          margin-right: 7.5px;
+          display: inline-block;
+          line-height: 17px;
+          text-align: center;
+        }
+        font-family: $Roboto-font;
+        font-weight: 400;
+        color: #6a737c;
+        font-size: 14px;
+      }
+    }
+    .calculator-slider {
+      label {
+        font-size: 20px;
+        font-family: $Roboto-font;
+        font-weight: 500;
+        margin-bottom: 0px;
+        color: #3c4146;
+        line-height: 32px;
+        &.label-2 {
+          font-size: 18px;
+          color: $theme-title-color;
+          line-height: 29.52px;
+        }
+      }
+      .range {
+        font-size: 14px;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        color: $theme-text-color;
+      }
+      .range-slider {
+        width: 100%;
+        &.noUi-horizontal {
+          height: 5px;
+          background-color: rgba(#0050b2, 15%);
+          border-radius: 2.5px;
+          .noUi-handle {
+            height: 15px;
+            width: 15px;
+            top: -5px;
+          }
+        }
+      }
+
+      .range-input {
+        height: 35px;
+        border-radius: 17.5px;
+        line-height: 32px;
+        text-align: center;
+        color: #6a737c;
+        font-size: 16px;
+        font-family: $Roboto-font;
+        font-weight: 500;
+        border: 1px solid #dcdee0;
+        width: 120px;
+        margin-left: 20px;
+
+        &:focus {
+          border-color: $primary-color;
+          color: #171d24;
+          box-shadow: none;
+        }
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .expected-payment {
+    .sec-head {
+      padding: 24px 22px;
+      border-radius: 7px;
+    }
+    h5 {
+      font-size: 20px;
+      font-family: $Roboto-font;
+      font-weight: 500;
+      color: #3c4146;
+    }
+    p {
+      font-size: 14px;
+      color: #6a737c;
+      font-family: $Roboto-font;
+      font-weight: 400;
+    }
+    h4 {
+      font-size: 24px;
+      font-family: $Roboto-font;
+      font-weight: 700;
+      color: #3c4146;
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*   track financial progress CSS
+/*----------------------------------------*/
+
+.track-f-progress {
+  overflow: hidden;
+  background-color: #fff;
+  .img-content {
+    position: relative;
+    text-align: right;
+    z-index: 1;
+    .bg-img {
+      position: absolute;
+      z-index: -1;
+      top: -35%;
+      left: -30%;
+    }
+    .track-3 {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+    }
+    .track-img {
+      position: absolute;
+      max-width: 100%;
+      width: auto;
+      &.track-1 {
+        top: 50px;
+        left: -30px;
+        z-index: 1;
+      }
+      &.track-2 {
+        bottom: 40px;
+        left: -15px;
+      }
+    }
+  }
+
+  .text-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.track-f-progress .text-content p,
+.card-payment .text-content p,
+.internet-banking .text-content p {
+  font-size: 16px;
+  color: $theme-text-color;
+  font-family: $Roboto-font;
+  font-weight: 400;
+  margin-top: 17px;
+  line-height: 26px;
+}
+.track-f-progress .text-content h2,
+.card-payment .text-content h2,
+.internet-banking .text-content h2 {
+  color: $theme-title-color;
+  font-size: 36px;
+  font-family: $Poppins-font;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/*----------------------------------------*/
+/*    card payment CSS
+/*----------------------------------------*/
+.card-payment {
+  overflow: hidden;
+  .img-content {
+    position: relative;
+    .bg-img {
+      position: absolute;
+      top: -20%;
+      left: -45%;
+      z-index: -1;
+    }
+    .card-2 {
+      position: absolute;
+      top: 35px;
+      right: 15px;
+    }
+  }
+
+  .text-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/*----------------------------------------*/
+/*      Internet Banking CSS
+/*----------------------------------------*/
+
+.internet-banking {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  .img-content {
+    position: relative;
+    z-index: 1;
+    .bg-img {
+      position: absolute;
+      z-index: -1;
+      top: -40%;
+      left: -32%;
+    }
+
+    .bank-1 {
+      position: absolute;
+      top: 60px;
+      right: -30px;
+    }
+    .bank-2 {
+      position: absolute;
+      position: absolute;
+      bottom: 80px;
+      left: -40px;
+    }
+    .bank-3 {
+      position: absolute;
+      top: 95px;
+      left: -105px;
+      z-index: -1;
+    }
+  }
+  .text-content {
+    position: relative;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,206 @@
+/*----------------------------------------*/
+/*  Recognition CSS
+/*----------------------------------------*/
+.recognition-widget {
+  .widget-navigation {
+    ul {
+      flex-direction: column;
+      background-color: transparent;
+      border-bottom: none !important;
+      li {
+        border-bottom: 1px solid #dcdee0;
+        background-color: transparent;
+        text-align: right;
+        padding: 14px 0 11px 0;
+        &:first-child {
+          padding-top: 0;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          border: none;
+          background-color: transparent;
+          font-size: 18px;
+          color: #6a737c;
+          font-family: $Roboto-font;
+          font-weight: 400;
+          display: inline-block;
+          padding: 0;
+          line-height: 30px;
+          &.active {
+            color: $primary-color;
+            background-color: transparent;
+            border: none;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 50px;
+    h3 {
+      font-size: 30px;
+      color: $primary-color;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      line-height: 42px;
+      margin-bottom: 0;
+    }
+    P {
+      font-size: 16px;
+      color: #787880;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      position: relative;
+      padding-left: 26px;
+      margin-top: 10px;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0%;
+        top: 7px;
+        height: 1px;
+        width: 20px;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.accolades-widget {
+  background-color: #3c4146;
+  border-radius: 8px;
+  position: relative;
+  padding: 25px 20px 40px 20px;
+  .accolades-header {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    img {
+      margin-bottom: -1px;
+    }
+    h2 {
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: #3c4146;
+      margin-bottom: -9px;
+      margin-left: 7px;
+      letter-spacing: -4px;
+    }
+  }
+
+  .accolades-content {
+    p {
+      font-size: 14px;
+      margin-left: 20px;
+    }
+    .subtitle {
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: #fff;
+    }
+    .text {
+      color: #f9d8ae;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        height: 1px;
+        width: 15px;
+        background-color: #f9d8ae;
+        left: -18px;
+      }
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*   Leadership widget CSS
+/*----------------------------------------*/
+.single-leadership-widget {
+  text-align: center;
+  a {
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      .leader-info {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .leader-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 50px 0 30px 40px;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(#333e48, 0%),
+        rgba(#1b222d, 80%)
+      );
+
+      h5 {
+        font-family: $Roboto-font;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+      }
+      p {
+        font-family: $Roboto-font;
+        font-weight: 400;
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+  }
+}
+/*----------------------------------------*/
+/*   Description CSS
+/*----------------------------------------*/
+
+.description-widget {
+  .desc-title {
+    border-radius: 5px;
+    padding: 38px 38px 42px 42px;
+    h2 {
+      font-size: 36px;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+  .desc-text {
+    p {
+      font-size: 18px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: #6c6c73;
+      line-height: 30px;
+    }
+  }
+}

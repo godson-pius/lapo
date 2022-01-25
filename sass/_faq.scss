@@ -1,0 +1,244 @@
+/*----------------------------------------*/
+/*  Frequently asked questions CSS
+/*----------------------------------------*/
+.faq-area-2 {
+  .single-widget-one {
+    border: 1px solid #dcdee0;
+    box-shadow: none;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}
+.faq-widget {
+  .single-widget-one {
+    display: flex;
+    padding: 30px;
+    box-shadow: 0 0.5px 1px 0 rgba(#334d72, 10%),
+      0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+    border-radius: 6px;
+    margin-top: 30px;
+    background-color: #fff;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      box-shadow: 0 20px 45px rgba(#334d72, 15%);
+    }
+  }
+  .widget-icon {
+    margin-right: 20px;
+    i {
+      font-size: 25px;
+      color: $primary-color;
+      display: inline-block;
+      margin-top: 9px;
+    }
+  }
+  .faq-header {
+    h4 {
+      color: $theme-title-color;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 40px;
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      padding-right: 20px;
+      i {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        display: none;
+        color: $theme-text-color;
+
+        & + i {
+          display: block;
+          color: $theme-title-color;
+        }
+      }
+
+      &.collapsed {
+        i {
+          display: block;
+
+          & + i {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .faq-body {
+    p {
+      font-size: 16px;
+      color: $theme-text-color;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      margin-top: 10px;
+      line-height: 26px;
+    }
+  }
+}
+
+.faq-widget-2 {
+  border-radius: 10px;
+  padding: 40px 30px;
+  background-color: #fff;
+  box-shadow: $theme-dropshadow;
+  .single-widget-one {
+    padding: 19px 0;
+    transition: all 0.3s ease-out;
+    border-bottom: 1px solid #dcdee0;
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  .faq-header {
+    h6 {
+      color: $primary-color;
+      font-family: $Poppins-font;
+      font-weight: 600;
+      font-size: 18px;
+      position: relative;
+      cursor: pointer;
+      padding-right: 25px;
+
+      i {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        display: none;
+        color: $primary-color;
+
+        & + i {
+          display: block;
+        }
+      }
+
+      &.collapsed {
+        color: $theme-title-color;
+        font-family: $Poppins-font;
+        font-weight: 500;
+        i {
+          color: #52575c;
+          display: block;
+
+          & + i {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .faq-body {
+    p {
+      font-size: 16px;
+      color: $theme-text-color;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      margin-top: 32px;
+    }
+  }
+}
+
+.advisor-area {
+  .section-title {
+    h2 {
+      margin-top: -9px;
+    }
+  }
+  .advisor-img {
+    position: relative;
+    .main-img {
+      border-radius: 15px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .shape {
+      position: relative;
+      z-index: -1;
+      .box {
+        position: absolute;
+        top: 20px;
+        right: -20px;
+        z-index: -1;
+        height: auto;
+        width: auto;
+        transform: translate(45%, -45%);
+      }
+      .circle-shape {
+        display: inline-block;
+        position: absolute;
+        top: -45px;
+        z-index: -2;
+        right: -35px;
+        width: 65px;
+        height: 65px;
+        background-color: transparent;
+        border-radius: 100%;
+        border: 20px solid #ffd9a0;
+        box-sizing: content-box;
+        animation: pulse 5s infinite;
+      }
+    }
+    .work-time {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 25px;
+      right: 30px;
+      border-radius: 20px;
+      background-color: rgba(#0d1b2b, 60%);
+      font-size: 14px;
+      color: #fff;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      padding: 9px 26px;
+
+      .circle-shape {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        position: relative;
+        background-color: rgba(#fff, 50%);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          height: 9px;
+          width: 9px;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+        }
+      }
+      span {
+        font-family: $Roboto-font;
+        font-weight: 500;
+      }
+    }
+  }
+  .theme-btn-primary_alt {
+    i {
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}

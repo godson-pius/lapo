@@ -1,0 +1,440 @@
+/*----------------------------------------*/
+/*   Testimonial CSS
+/*----------------------------------------*/
+.testimonial-slider {
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(-80%, -50%);
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 24px !important;
+    color: #9199a1 !important;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px 0px #1455a647;
+
+    outline: none;
+    z-index: 999;
+    transition: all 0.3s ease-out;
+    &:hover {
+      box-shadow: 0px 5px 12px 0px #334d7240;
+
+      i {
+        color: #1456a6;
+      }
+    }
+    &::before {
+      display: none;
+    }
+    i {
+      display: inline-block;
+      line-height: 4px;
+      vertical-align: middle;
+      transition: all 0.3s ease-out;
+    }
+
+    &.slick-prev {
+      left: calc((100vw - 1200px) / 2);
+      @media only screen and (max-width: 1280px) and (min-width: 1200px) {
+        left: 0;
+        transform: translate(0);
+      }
+    }
+    &.slick-next {
+      right: calc((100vw - 1200px) / 2);
+      transform: translate(80%, -50%);
+      @media only screen and (max-width: 1280px) and (min-width: 1200px) {
+        right: 0;
+        transform: translate(0);
+      }
+    }
+  }
+  .slick-list {
+    .slick-track {
+      .slick-slide {
+        opacity: 40%;
+        margin: 0 20px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        &.slick-center,
+        &.slick-active {
+          opacity: 1;
+          .testimonial-widget {
+            box-shadow: 0 10px 30px 0 rgba(#334d72, 12%);
+          }
+        }
+      }
+    }
+  }
+}
+.testimonial-area {
+  .section-title {
+    h2 {
+      margin-top: -6px;
+    }
+  }
+}
+.testimonial-slider-2 {
+  position: relative;
+  .slick-slide {
+    margin-bottom: 77px;
+  }
+  .slick-arrow {
+    position: absolute;
+    top: inherit;
+    right: inherit;
+    bottom: -10px;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    border-radius: 3px;
+    transition: all 0.3s ease-out;
+    box-shadow: $theme-dropshadow;
+    font-size: 18px;
+    color: #a0a4a8;
+    z-index: 1;
+    &:hover {
+      box-shadow: 0 5px 15px 0 rgba(#334d72, 10%);
+      color: $theme-title-color;
+    }
+
+    &.slick-next {
+      left: 55px;
+    }
+  }
+}
+.testimonial-slider-3 {
+  .slick-slide {
+    margin-bottom: 77px;
+  }
+}
+.testimonial-widget {
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  &::after {
+    content: "\f10e";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-size: 75px;
+    text-rendering: auto;
+    position: absolute;
+    right: 80px;
+    bottom: 40px;
+    color: $theme-text-color;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    opacity: 0.1;
+    font-weight: 900;
+  }
+
+  .author-img {
+    display: inline-block;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .testimonial-content {
+    padding: 20px;
+    .watch-button {
+      font-size: 18px;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      color: $theme-title-color;
+      margin-bottom: 15px;
+      a {
+        display: inline-block;
+      }
+      i {
+        height: 30px;
+        width: 30px;
+        background-image: linear-gradient(to bottom, #4b8fe3 0%, #1455a6 100%);
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 10px;
+        margin-right: 8px;
+      }
+    }
+
+    h2 {
+      font-size: 36px;
+      color: $theme-title-color;
+      font-family: $Poppins-font;
+      font-weight: 700;
+      margin: 0;
+    }
+    p {
+      font-size: 18px;
+      color: $theme-text-color;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      font-style: italic;
+      margin: 30px 0 28px 0;
+      line-height: 30px;
+    }
+    .author-info {
+      h4 {
+        font-size: 24px;
+        color: $theme-title-color;
+        font-family: $Poppins-font;
+        font-weight: 600;
+        margin-bottom: 0;
+        line-height: 39px;
+      }
+      span {
+        font-size: 16px;
+        color: $theme-text-color;
+        font-family: $Roboto-font;
+        font-weight: 400;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.testimonial-widget-2 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 25px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .client-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 0 22px 20px;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(#171d24, 2%),
+      rgba(#171d24, 50%),
+      rgba(#171d24, 85%)
+    );
+
+    p {
+      font-family: $Roboto-font;
+      font-weight: 500;
+      font-size: 16px;
+      color: #fff;
+      line-height: 24px;
+    }
+    span {
+      font-family: $Roboto-font;
+      font-weight: 400;
+      font-size: 12px;
+      color: #fff;
+      display: block;
+      line-height: 14.5px;
+    }
+  }
+}
+
+.testimonial-widget-3 {
+  position: relative;
+  .client-img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      display: inline-block;
+      line-height: 45px;
+      i {
+        background: $primary-color;
+        text-shadow: 0 7px 15px rgba(#0050b2, 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        vertical-align: middle;
+      }
+    }
+
+    .caption {
+      font-family: $Roboto-font;
+      font-weight: 500;
+      font-style: italic;
+      color: #fff;
+      font-size: 16px;
+      padding: 22px 25px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      line-height: 24px;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(#171d24, 0%),
+        rgba(#171d24, 75%),
+        rgba(#171d24, 100%)
+      );
+
+      &::after {
+        position: absolute;
+        content: "\f10e";
+        font-family: "Font Awesome 5 Free";
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        color: rgba(#f7fafc, 40%);
+        font-size: 30px;
+        font-weight: 900;
+        right: 30px;
+      }
+    }
+  }
+  .client-info {
+    margin: 20px 0 0 20px;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    h6 {
+      font-size: 18px;
+      color: $theme-title-color;
+      font-family: $Roboto-font;
+      font-weight: 500;
+      line-height: 24px;
+      margin-bottom: 0;
+    }
+    span {
+      font-size: 14px;
+      color: $theme-text-color;
+      font-family: $Roboto-font;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*  What Our Client Says CSS
+/*----------------------------------------*/
+.client-area {
+  background-color: #fff;
+  .client-slider {
+    .slick-list {
+      margin: 0 -25px;
+      padding: 0 10px;
+    }
+    .slick-dots {
+      bottom: inherit;
+      // position: absolute;
+      // left: 50%;
+      // transform: translateX(-50%);
+      li {
+        &.slick-active {
+          button {
+            background-color: #5d5d66;
+            border-color: #5d5d66;
+          }
+        }
+      }
+    }
+
+    .single-client {
+      padding: 20px 25px;
+      box-shadow: 0 0.5px 1px 0 rgba(#334d72, 10%),
+        0px 1.6px 3.6px 0 rgba(51, 77, 114, 0.15);
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -ms-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s;
+      margin: 55px 15px;
+      border-radius: 10px;
+
+      &:hover {
+        box-shadow: 0 20px 45px 0 rgba(#334d72, 15%);
+      }
+
+      img {
+        border-radius: 50%;
+        margin-top: -55px;
+        width: auto !important;
+      }
+      .quote {
+        font-size: 17px;
+        font-family: $Inter-font;
+        font-weight: 400;
+        font-style: italic;
+        color: #5d5d66;
+        margin: 25px 0 39px 0;
+        position: relative;
+        &::after {
+          content: "\f10e";
+          position: absolute;
+          bottom: -15px;
+          right: 10px;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          font-style: normal;
+          color: #6d27e5;
+          font-size: 25px;
+          opacity: 0.3;
+        }
+      }
+
+      .client-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 10px 0;
+        align-items: center;
+        p {
+          font-size: 17px;
+          font-family: $Roboto-font;
+          font-weight: 500;
+          color: #171717;
+          text-transform: capitalize;
+          line-height: 28px;
+        }
+        .role {
+          display: inline-block;
+          font-size: 12px;
+          color: #848d95;
+          font-family: $Inter-font;
+          font-weight: 400;
+          text-transform: capitalize;
+          line-height: 19px;
+        }
+
+        .rating {
+          a {
+            i {
+              color: #efba34;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
