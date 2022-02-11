@@ -1,6 +1,11 @@
 
 
-<?php $page = 'Loan'; require_once 'inc/header.php'; ?>
+<?php 
+$page = 'Loan'; 
+require_once 'inc/header.php'; 
+
+
+?>
 
     <main>
         <!-- Banner start -->
@@ -66,11 +71,36 @@
                         </div>
                     </div>
                 </div>
-                <form action="personal-details.html">
+                <form id="form">
                     <div class="row">
                         <div class="col-md-10 mx-auto">
                             <div class="row pt-35  gy-lg-0 gy-3">
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
+                                    <div class="loan-apply-widget wow fadeInRight" data-wow-delay="0.1s">
+                                        <div class="icon">
+                                            <img src="img/apply-loan/icon-4.1.png" alt="icon-1">
+                                            <img src="img/apply-loan/icon-4.1.png" alt="icon-1.2">
+                                        </div>
+                                        <div class="apply-content">
+                                            <span class="title">Enter your Fullname</span>
+                                            <p class="d-flex"> <input class="w-100" name="bvn1" type="text" id="name" value="John Cowell"> </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="loan-apply-widget wow fadeInRight" data-wow-delay="0.1s">
+                                        <div class="icon">
+                                            <img src="img/apply-loan/icon-4.1.png" alt="icon-1">
+                                            <img src="img/apply-loan/icon-4.1.png" alt="icon-1.2">
+                                        </div>
+                                        <div class="apply-content">
+                                            <span class="title">Enter your Contact No</span>
+                                            <p class="d-flex"> <input class="w-100" type="text" name="bvn2" id="phone"> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4  mt-3">
                                     <div class="loan-apply-widget wow fadeInRight" data-wow-delay="0.1s">
                                         <div class="icon">
                                             <img src="img/apply-loan/icon-1.1.png" alt="icon-1">
@@ -78,20 +108,20 @@
                                         </div>
                                         <div class="apply-content">
                                             <span class="title">How much do you need?</span>
-                                            <p class="d-flex">$ <input class="w-100" type="text" value="5,000"> </p>
+                                            <p class="d-flex">$ <input class="w-100" type="text" value="50" id="amount"> </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4  mt-3">
                                     <div class="loan-apply-widget wow fadeInRight" data-wow-delay="0.3s">
                                         <div class="icon">
                                             <img src="img/apply-loan/icon-2.1.png" alt="icon-2">
                                             <img src="img/apply-loan/icon-2.2.png" alt="icon-2.2">
                                         </div>
                                         <div class="apply-content">
-                                            <span class="title">Type of Loan</span>
-                                            <select name="select-loan-type" id="select-loan-type">
-                                                <option>Select your Loan</option>
+                                            <span class="title">Select Type of Loan</span>
+                                            <select name="select-loan-type" id="select-loan-type" name="type">
+                                                
                                                 <option value="Home Loan">Home Loan</option>
                                                 <option value="Loan Against Property">Loan Against Property</option>
                                                 <option value="Loan Renovation">Loan Renovation</option>
@@ -100,7 +130,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4  mt-3">
                                     <div class="loan-apply-widget wow fadeInRight" data-wow-delay="0.5s">
                                         <div class="icon">
                                             <img src="img/apply-loan/icon-3.1.png" alt="icon-3">
@@ -110,86 +140,8 @@
                                             <span class="title">Where do you currently live?</span>
                                             <div class="select-location d-flex align-items-center"
                                                 id="locationSlectParent">
-                                                <select class="w-100" name="select-location" id="locationSelect">
-                                                    <option value="Bagerhat">Bagerhat</option>
-                                                    <option value="Bandarban" selected>Bandarban</option>
-                                                    <option value="Barguna">Barguna</option>
-                                                    <option value="Barisal">Barisal</option>
-                                                    <option value="Bhola">Bhola</option>
-                                                    <option value="Barishal Metro">Barishal Metro</option>
-                                                    <option value="Bogra">Bogra</option>
-                                                    <option value="Brahmmanbaria">Brahmmanbaria</option>
-                                                    <option value="Chandpur">Chandpur</option>
-                                                    <option value="Chapai Nawabganj">Chapai Nawabganj</option>
-                                                    <option value="Chittagong">Chittagong</option>
-                                                    <option value="Chuadanga">Chuadanga</option>
-                                                    <option value="Chottogram Metro">Chottogram Metro</option>
-                                                    <option value="Cox&#039;s Bazar">Cox&#039;s Bazar</option>
-                                                    <option value="Coxsbazar">Coxsbazar</option>
-                                                    <option value="Cumilla">Cumilla</option>
-                                                    <option value="Dhaka">Dhaka</option>
-                                                    <option value="Dinajpur">Dinajpur</option>
-                                                    <option value="Dhaka Metro">Dhaka Metro</option>
-                                                    <option value="Faridpur">Faridpur</option>
-                                                    <option value="Feni">Feni</option>
-                                                    <option value="Gaibandha">Gaibandha</option>
-                                                    <option value="Gazipur">Gazipur</option>
-                                                    <option value="Gazipur Metro">Gazipur Metro</option>
-                                                    <option value="Gopalgonj">Gopalgonj</option>
-                                                    <option value="Habigonj">Habigonj</option>
-                                                    <option value="Jaflong">Jaflong</option>
-                                                    <option value="Jamalpur">Jamalpur</option>
-                                                    <option value="Jessore">Jessore</option>
-                                                    <option value="Jhalokathi">Jhalokathi</option>
-                                                    <option value="Jhenaidah">Jhenaidah</option>
-                                                    <option value="Joypurhat">Joypurhat</option>
-                                                    <option value="Khagrachari">Khagrachari</option>
-                                                    <option value="Khulna">Khulna</option>
-                                                    <option value="Kishoregonj">Kishoregonj</option>
-                                                    <option value="Khulna Metro">Khulna Metro</option>
-                                                    <option value="Kurigram">Kurigram</option>
-                                                    <option value="Kustia">Kustia</option>
-                                                    <option value="Lalmonirhat">Lalmonirhat</option>
-                                                    <option value="Laxmipur">Laxmipur</option>
-                                                    <option value="Madaripur">Madaripur</option>
-                                                    <option value="Magura">Magura</option>
-                                                    <option value="Manikgonj">Manikgonj</option>
-                                                    <option value="Meherpur">Meherpur</option>
-                                                    <option value="Moulabhibazar">Moulabhibazar</option>
-                                                    <option value="Munshigonj">Munshigonj</option>
-                                                    <option value="Mymensingh">Mymensingh</option>
-                                                    <option value="Naogaon">Naogaon</option>
-                                                    <option value="Narail">Narail</option>
-                                                    <option value="Narayangonj">Narayangonj</option>
-                                                    <option value="Narsingdi">Narsingdi</option>
-                                                    <option value="Natore">Natore</option>
-                                                    <option value="Netrokona">Netrokona</option>
-                                                    <option value="Nilphamari">Nilphamari</option>
-                                                    <option value="Noakhali">Noakhali</option>
-                                                    <option value="Pabna">Pabna</option>
-                                                    <option value="Panchagarh">Panchagarh</option>
-                                                    <option value="Patuakhali">Patuakhali</option>
-                                                    <option value="Pirojpur">Pirojpur</option>
-                                                    <option value="Rajbari">Rajbari</option>
-                                                    <option value="Rajshahi">Rajshahi</option>
-                                                    <option value="Rangamati">Rangamati</option>
-                                                    <option value="Rangpur">Rangpur</option>
-                                                    <option value="Rajshahi Metro ">Rajshahi Metro </option>
-                                                    <option value="Rangpur Metro ">Rangpur Metro </option>
-                                                    <option value="Saint Martin">Saint Martin</option>
-                                                    <option value="Satkhira">Satkhira</option>
-                                                    <option value="Shariatpur">Shariatpur</option>
-                                                    <option value="Sherpur">Sherpur</option>
-                                                    <option value="Sirajgonj">Sirajgonj</option>
-                                                    <option value="Sylhet Metro">Sylhet Metro</option>
-                                                    <option value="Srimangal">Srimangal</option>
-                                                    <option value="Sunamgonj">Sunamgonj</option>
-                                                    <option value="Sylhet">Sylhet</option>
-                                                    <option value="Tangail">Tangail</option>
-                                                    <option value="Teknaf">Teknaf</option>
-                                                    <option value="Thakurgaon">Thakurgaon</option>
-                                                </select>
-                                                <span class="close" id="readOnlyClose">
+                                                <input class="w-100" name="select-location" id="locationSelect">
+                                                    <span class="close" id="readOnlyClose">
                                                     <i class="icon_close"></i>
                                                 </span>
                                             </div>
@@ -204,8 +156,8 @@
                                             <img src="img/apply-loan/icon-4.1.png" alt="icon-1.2">
                                         </div>
                                         <div class="apply-content">
-                                            <span class="title">Add Guarantor BVN (1)</span>
-                                            <p class="d-flex"> <input class="w-100" type="text" value="64736473647"> </p>
+                                            <span class="title">Add Guarantor NIN (1)</span>
+                                            <p class="d-flex"> <input class="w-100" name="bvn1" type="text" id="bvn1" placeholder="nin number"> </p>
                                         </div>
                                     </div>
                                 </div>
@@ -217,9 +169,7 @@
                                             <img src="img/apply-loan/icon-4.1.png" alt="icon-1.2">
                                         </div>
                                         <div class="apply-content">
-                                            <span class="title">Add Guarantor BVN (2)</span>
-                                            <p class="d-flex"> <input class="w-100" type="text" value="64736473647"> </p>
-                                        </div>
+                                            <span class="title">Add Guarantor NIN (2)</span><p class="d-flex"> <input class="w-100" name="bvn1" type="text" id="bvn2" placeholder="nin number"> </p>                                        </div>
                                     </div>
                                 </div>
 
@@ -234,8 +184,11 @@
                                 </div>
 
                                 <div class="col-12 text-center mt-35">
-                                    <button class="theme-btn theme-btn-lg wow fadeInUp" type="submit">
+                                    <button type="button" class="theme-btn theme-btn-lg wow fadeInUp" onclick="checkit();" name="check" id="on">
                                         apply now <i class="arrow_right"></i>
+                                    </button>
+                                    <button type="button" id="dis" style="display: none;" class="theme-btn theme-btn-lg wow">
+                                        <i class="fa-solid fa-circle-notch fa-spin"></i> Please wait
                                     </button>
 
                                 </div>
@@ -524,6 +477,160 @@
     <script type="text/javascript" src="js/jquery-editable-select.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript">
+    const phoneInputField = document.querySelector("#phone");
+   const phoneInput = window.intlTelInput(phoneInputField, {
+     utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+   });
+</script>
+    <script type="text/javascript">
+ var type;
+ var bvn1;
+                        var bvn2; 
+                        var amt;
+                        var name; 
+                        var ph;
+                        var num;
+        function checkit(){
+            type = document.getElementById('select-loan-type').selectedOptions[0].value;
+ bvn1 = document.getElementById("bvn1").value;
+                        bvn2 = document.getElementById("bvn2").value; 
+                        amt = document.getElementById("amount").value;
+                        name = document.getElementById("name").value; 
+                        ph = document.getElementById("phone").value;
+num = phoneInput.getNumber();
+
+                       
+                        
+// api for checking if the bvn entered does exist or not
+//             const options = {
+//   method: 'POST',
+//   headers: {
+//     Accept: 'application/json',
+//     userid: '1644416326286',
+//     apiKey: 'CQBmW2dOU8ti9XF3xZcU',
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     searchParameter: bvn1,
+//     verificationType: 'NIN-SEARCH',
+//     transactionReference: ''
+//   })
+// };
+
+// fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
+
+if((bvn1.length != 11)||(/^\d+$/.test(bvn1) != true)){
+
+    alert("Invalid NIN number for garantor 1. \n\nPlease enter a valid garantor's NIN number")
+}
+else{
+    if((bvn2.length != 11)||(/^\d+$/.test(bvn2) != true)){
+
+    alert("Invalid NIN number for garantor 2. \n\nPlease enter a valid garantor's NIN number")
+}
+else{
+    if(amount < 50){
+        alert("Sorry! you can only borrow from $50 and above");
+    }
+    else{
+    if(amt.length <= 0){
+        alert("Please you have to specify an amount");
+    }
+    else{
+        if(num.length == 0){
+alert("Please Enter your Phone number");
+        }
+        else{
+            if(name.length == 0){
+                alert("Please Enter your Full name");
+
+            }
+
+            else{
+                if(/^\d+$/.test(ph) != true){
+                    alert("please enter a valid phone number!\n\n phone number must be digits")
+                }
+                else{
+                   ipLookUp();  
+                }
+                
+            }
+        }
+       
+    }
+
+}
+}
+}
+        }
+
+        function ipLookUp () {
+            var country = document.getElementById("locationSelect").value;
+  $.ajax('http://ip-api.com/json')
+  .then(
+      function success(response) {
+          console.log('User\'s Location Data is ', response);
+          console.log('User\'s Country', response.country);
+          if(response.country.toLowerCase() != country.toLowerCase()){
+            alert("Please the location you specified does not match your location. \n\n enter your current location");
+        }
+        else{
+            document.getElementById("on").style.display="none";
+            document.getElementById("dis").style.display="block";
+             $.ajax({
+ type: 'post',
+ url: 'process.php',
+ data: {
+  amount:amt,
+  nin1:bvn1,
+  nin2:bvn2,
+  ltype:type,
+  location:country,
+  phone:num,
+  fname:name
+ },
+ success: function (response) {
+    document.getElementById("dis").style.display="none";
+    document.getElementById("on").style.display="block";
+    if(response=="success"){
+        Swal.fire({
+  title: 'Successful!',
+  text: 'You have successfully applied for  a loan of '+amt +'\nPlease be patient while we process your loan we will get back to you',
+  imageUrl: 'cong2.gif',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Congrats!',
+  });
+    }
+    else{
+ Swal.fire({
+  title: 'Error!',
+  text: 'oops an error occured! try again later',
+  imageUrl: 'err.gif',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'error!',
+});
+ }
+}
+ });
+}
+          
+},
+
+      function fail(data, status) {
+          console.log('Request failed.  Returned status of',
+                      status);
+      }
+  );
+}
+
+    </script>
 </body>
 
 </html>

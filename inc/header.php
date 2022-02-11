@@ -22,6 +22,13 @@
     <link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body data-spy="scroll" data-offset="70">
