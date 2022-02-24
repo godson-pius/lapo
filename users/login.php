@@ -1,3 +1,35 @@
+
+<?php
+  require_once '../admin/config.php';
+
+  if (isset($_POST['submit'])) {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      if (!empty($email) && !empty($password)) {
+          $sql = "SELECT * FROM users WHERE email = '$email'";
+          $query = mysqli_query($link, $sql);
+
+          if (mysqli_num_rows($query) > 0) {
+
+            $rows = mysqli_fetch_assoc($query);
+            if (sha1($password) === $rows['password']) {
+              $_SESSION['users'] = $rows['id'];
+            
+              header("Location: index.php");
+            } else {
+              echo "<script>alert('Incorrect Login details')</script>";
+            }
+          } else {
+            echo "<script>alert('Incorrect Login details')</script>";
+          }
+      } else {
+        echo "<script>alert('Please fill in the spaces correctly')</script>";
+      }
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,16 +77,16 @@
 
   <div class="container">
     <main class="form-signin">
-      <form>
+      <form action="" method="post">
       <img class="mb-4 justify-content-center" src="../img/logo/Logo-2.png" alt="">
         <!-- <h1 class="h3 mb-3 fw-normal text-center">LAPO LOAN LTD</h1> -->
 
         <div class="form-floating">
-          <input type="email" class="form-control form-control-sm rounded" id="floatingInput" placeholder="name@example.com">
+          <input type="email" name="email" class="form-control form-control-sm rounded" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating mb-4 mt-2">
-          <input type="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password">
+          <input type="password" name="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Password</label>
           
           <div class="mt-2 account text-center">
@@ -62,7 +94,7 @@
           </div>
         </div>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Sign in</button>
       </form>
     </main>
   </div>

@@ -1,3 +1,44 @@
+<?php 
+    require_once 'config.php';
+    if (!isset($_SESSION['admin'])) {
+        header("Location: login.php");
+    }
+
+    function getTotal($table) {
+        global $link;
+
+        $sql = "SELECT * FROM $table";
+        $query = mysqli_query($link, $sql);
+
+        if ($query) {
+            return mysqli_num_rows($query);
+        }
+    }
+
+    function getContent($table) {
+        global $link;
+
+        $sql = "SELECT * FROM $table";
+        $query = mysqli_query($link, $sql);
+
+        if (mysqli_num_rows($query) > 0) {
+            return $query;
+        }
+    }
+
+    function getLoan() {
+        global $link;
+
+        $sql = "SELECT * FROM loan_requests INNER JOIN users ON loan_requests.user_id = users.id WHERE approve = 0";
+        $query = mysqli_query($link, $sql);
+
+        if (mysqli_num_rows($query) > 0) {
+            return $query;
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +85,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Users</h5>
-                        <p class="card-text"> <i class="fa fa-users" aria-hidden="true"></i> 34</p>
+                        <p class="card-text"> <i class="fa fa-users" aria-hidden="true"></i> <?= getTotal('users'); ?> </p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -53,8 +94,8 @@
             <div class="col-lg-6">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Loans Collected</h5>
-                        <p class="card-text"> <i class="fa fa-bank" aria-hidden="true"></i> $34</p>
+                        <h5 class="card-title">Current Loans</h5>
+                        <p class="card-text"> <i class="fa fa-bank" aria-hidden="true"></i> $<?= getTotal('loan_requests'); ?></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -69,19 +110,37 @@
                 <tr>
                     <th>User</th>
                     <th>Amount</th>
+                    <th>Guarantor 1</th>
+                    <th>Guarantor 2</th>
                     <th>Date</th>
                     <th>Action</th>
                 </tr>
 
-                <tr>
-                    <td>James Cowell</td>
-                    <td>$50</td>
-                    <td>12 January, 2022</td>
-                    <td>
-                        <button class="btn btn-success btn-sm">Approve</button>
-                        <button class="btn btn-danger btn-sm">Disapprove</button>
-                    </td>
-                </tr>
+                <?php
+                    $loans = getLoan();
+                    if (!empty($loans)) {
+                        foreach ($loans as $loan) {
+                            extract($loan); ?>
+                            <tr>
+                                <td><?= $fullname; ?></td>
+                                <td>$<?= $amount; ?></td>
+                                <td><?= $garantor1; ?></td>
+                                <td><?= $garantor2; ?></td>
+                                <td><?= date('d-M-Y', strtotime($date)); ?></td>
+                                <td>
+                                    <button id="approve" onclick="approveLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-success btn-sm">Approve</button>
+                                    <button id="decline" onclick="declineLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-danger btn-sm">Disapprove</button>
+                                </td>
+                            </tr>
+                    
+                <?php } } else { ?>
+                    <tr>
+                                <td style="color: red;">No Loan to approve!</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                <?php } ?>
             </table>
         </div>
 
@@ -92,7 +151,7 @@
             <h5>Users</h5>
             <hr>
 
-            <table class="table table-responsiveness mt-2">
+            <table class="table table-responsiveness mt-2 text-center">
                 <tr>
                     <th>User</th>
                     <th>Phone Number</th>
@@ -100,16 +159,34 @@
                     <th>Date Registered</th>
                     <th>Action</th>
                 </tr>
-
-                <tr>
-                    <td>James Cowell</td>
-                    <td>09099898787</td>
-                    <td>Nigeria</td>
-                    <td>12 January, 2022</td>
-                    <td>
-                        <button class="btn btn-info btn-sm">Remove User</button>
-                    </td>
-                </tr>
+                
+                <?php
+                    $users = getContent('users');
+                    if (!empty($users)) {
+                        foreach ($users as $user) {
+                            extract($user); ?>
+                            <tr>
+                                <td><?= $fullname; ?></td>
+                                <td><?= $phone; ?></td>
+                                <!-- <td><?= $address; ?></td> -->
+                                <td>
+                                <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=<?= $address; ?>&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/">divi discount</a><br><style>.mapouter{position:relative;text-align:right;height:200px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:600px;}</style></div></div>
+                                </td>
+                                <td><?= date('d-M-Y', strtotime($date)); ?></td>
+                                <td>
+                                    <button id="delete" onclick="removeUser(this)" data-id="<?= $id; ?>" class="btn btn-info btn-sm">Remove User</button>
+                                </td>
+                            </tr>
+                    
+                <?php } } else { ?>
+                    <tr>
+                                <td style="color: red;">No User!</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                <?php } ?>
+                
             </table>
         </div>
     </div>
@@ -129,6 +206,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
         integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="script.js"></script>
 </body>
 
 </html>

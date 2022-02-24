@@ -1,3 +1,49 @@
+<?php 
+    require_once '../admin/config.php';
+    if (!isset($_SESSION['users'])) {
+        header("Location: login.php");
+    } else {
+        $user_id = $_SESSION['users'];
+    }
+
+    function getTotal($table) {
+        global $link;
+
+        $sql = "SELECT * FROM $table";
+        $query = mysqli_query($link, $sql);
+
+        if ($query) {
+            return mysqli_num_rows($query);
+        }
+    }
+
+    function getMyloan() {
+        global $link;
+        global $user_id;
+
+        $sql = "SELECT * FROM loan_requests WHERE user_id = $user_id";
+        $query = mysqli_query($link, $sql);
+
+        if ($query) {
+            return mysqli_num_rows($query);
+        }
+    }
+
+    function getLoan() {
+        global $link;
+        global $user_id;
+
+
+        $sql = "SELECT * FROM loan_requests INNER JOIN users ON loan_requests.user_id = $user_id";
+        $query = mysqli_query($link, $sql);
+
+        if (mysqli_num_rows($query) > 0) {
+            return $query;
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +59,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>LAPO - ADMIN</title>
+    <title>LAPO - USERS</title>
 
     <style>
         .card {
@@ -44,7 +90,7 @@
                 <div class="card shadow-sm bg-info bg-opacity-500 text-light">
                     <div class="card-body">
                         <h5 class="card-title">Users</h5>
-                        <p class="card-text"> <i class="fa fa-users" aria-hidden="true"></i> 34</p>
+                        <p class="card-text"> <i class="fa fa-users" aria-hidden="true"></i> <?= getTotal('users'); ?></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -54,7 +100,7 @@
                 <div class="card shadow-sm bg-warning bg-opacity-500 text-dark">
                     <div class="card-body">
                         <h5 class="card-title">My Loans</h5>
-                        <p class="card-text"> <i class="fa fa-dollar" aria-hidden="true"></i> 34</p>
+                        <p class="card-text"> <i class="fa fa-dollar" aria-hidden="true"></i> <?= getMyloan(); ?></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -72,22 +118,31 @@
                     <th>Status</th>
                 </tr>
 
-                <tr>
-                    <td>$50</td>
-                    <td>12 January, 2022</td>
-                    <td>
-                        <button class="btn btn-success btn-sm">Approved</button>
-                    </td>
-                </tr>
+                <?php
+                    $loans = getLoan();
+                    if (!empty($loans)) {
+                        foreach ($loans as $loan) {
+                            extract($loan); ?>
 
-                <tr>
-                    <td>$1000</td>
-                    <td>14 April, 2022</td>
-                    <td>
-                        <button class="btn btn-danger btn-sm">Declined</button>
-                    </td>
-                </tr>
+                                <tr>
+                                    <td>$<?= $amount; ?></td>
+                                    <td><?= date('d-M-Y', strtotime($date)); ?></td>
+                                    <td>
+                                        <?php echo ($approve == 1) ? "<button class='btn btn-success btn-sm'>Approved</button>" : "<button class='btn btn-danger btn-sm'>Declined</button>" ?>
+                                    </td>
+                                </tr>
+                <?php } } else { ?>
+                    <tr>
+                                <td style="color: red;">No Loan!</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                <?php } ?>
             </table>
+            <div class="d-flex flex-row-reverse">
+                <a class="btn btn-info btn-sm shadow"href="../loan.php">Apply for loan</a>
+            </div>
         </div>
     </div>
 
