@@ -497,208 +497,213 @@ require_once 'inc/header.php';
     });
 </script>
 <script type="text/javascript">
-    var type;
-    var bvn1;
-    var bvn2;
-    var amt;
-    var name;
-    var ph;
-    var num;
+ var type;
+ var bvn1;
+                        var bvn2; 
+                        var amt;
+                        var name; 
+                        var ph;
+                        var num;
+        function checkit(){
+            type = document.getElementById('select-loan-type').selectedOptions[0].value;
+ bvn1 = document.getElementById("bvn1").value;
+                        bvn2 = document.getElementById("bvn2").value; 
+                        amt = document.getElementById("amount").value;
+                        name = document.getElementById("name").value; 
+                        ph = document.getElementById("phone").value;
+num = phoneInput.getNumber();
 
-    function checkit() {
-        type = document.getElementById('select-loan-type').selectedOptions[0].value;
-        bvn1 = document.getElementById("bvn1").value;
-        bvn2 = document.getElementById("bvn2").value;
-        amt = document.getElementById("amount").value;
-        name = document.getElementById("name").value;
-        ph = document.getElementById("phone").value;
-        num = phoneInput.getNumber();
+                       
+                        
+// api for checking if the bvn entered does exist or not
+//             const options = {
+//   method: 'POST',
+//   headers: {
+//     Accept: 'application/json',
+//     userid: '1644416326286',
+//     apiKey: 'CQBmW2dOU8ti9XF3xZcU',
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     searchParameter: bvn1,
+//     verificationType: 'NIN-SEARCH',
+//     transactionReference: ''
+//   })
+// };
 
+// fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
 
-        if ((bvn1.length != 11) || (/^\d+$/.test(bvn1) != true)) {
+if((bvn1.length != 11)||(/^\d+$/.test(bvn1) != true)){
 
-            alert("Invalid NIN number for garantor 1. \n\nPlease enter a valid garantor's NIN number")
-        } else {
-            if ((bvn2.length != 11) || (/^\d+$/.test(bvn2) != true)) {
+    alert("Invalid NIN number for garantor 1. \n\nPlease enter a valid garantor's NIN number")
+}
+else{
+    if((bvn2.length != 11)||(/^\d+$/.test(bvn2) != true)){
 
-                alert("Invalid NIN number for garantor 2. \n\nPlease enter a valid garantor's NIN number")
-            } else {
-                if (amount < 50) {
-                    alert("Sorry! you can only borrow from $50 and above");
-                } else {
-                    if (amt.length <= 0) {
-                        alert("Please you have to specify an amount");
-                    } else {
-                        if (num.length == 0) {
-                            alert("Please Enter your Phone number");
-                        } else {
-                            if (name.length == 0) {
-                                alert("Please Enter your Full name");
+    alert("Invalid NIN number for garantor 2. \n\nPlease enter a valid garantor's NIN number")
+}
+else{
+    if(amount < 50){
+        alert("Sorry! you can only borrow from $50 and above");
+    }
+    else{
+    if(amt.length <= 0){
+        alert("Please you have to specify an amount");
+    }
+    else{
+        if(num.length == 0){
+alert("Please Enter your Phone number");
+        }
+        else{
+            if(name.length == 0){
+                alert("Please Enter your Full name");
 
-                            } else {
-                                if (/^\d+$/.test(ph) != true) {
-                                    alert("please enter a valid phone number!\n\n phone number must be digits")
-                                } else {
-                                    if (bvn1 == bvn2) {
-                                        alert("Please You entered the same Nin details for garantor 1 and 2");
+            }
 
-                                    } else {
-                                        ipLookUp();
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-
+            else{
+                if(/^\d+$/.test(ph) != true){
+                    alert("please enter a valid phone number!\n\n phone number must be digits")
                 }
+                else{
+                   ipLookUp();  
+                }
+                
             }
         }
+       
     }
 
-    function ipLookUp() {
-        var country = document.getElementById("locationSelect").value;
-        $.ajax('http://ip-api.com/json')
-            .then(
-                function success(response3) {
-                    console.log('User\'s Location Data is ', response3);
-                    console.log('User\'s Country', response3.country);
-                    if (response3.country.toLowerCase() != country.toLowerCase()) {
-                        alert(
-                            "Please the location you specified does not match your location. \n\n enter your current location"
-                            );
-                    } else {
-                        //nin api started here
-                        const options = {
-                                method: 'POST',
-                                headers: {
-                                    Accept: 'application/json',
-                                    userid: '1644416326286',
-                                    apiKey: 'C9bnOwkMY95pLtrTpIht',
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({searchParameter: bvn1, verificationType: 'BVN-FULL-DETAILS'})
-                                };
+}
+}
+}
+        }
 
-                                // fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
-                                // .then(response => response.json())
-                                // .then(response => console.log(response))
-                                // .catch(err => console.error(err));
+        function ipLookUp () {
+            var country = document.getElementById("locationSelect").value;
+  $.ajax('http://ip-api.com/json')
+  .then(
+      function success(response) {
+          console.log('User\'s Location Data is ', response);
+          console.log('User\'s Country', response.country);
+          if(response.country.toLowerCase() != country.toLowerCase()){
+            alert("Please the location you specified does not match your location. \n\n enter your current location");
+        }
+        else{
+ //           api for checking if the bvn entered does exist or not
+            const options = {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    userid: '1644416326286',
+    apiKey: 'C9bnOwkMY95pLtrTpIht',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "searchParameter": bvn1,
+    "transactionReference": "",
+    "verificationType":"BVN-FULL-DETAILS"
+  })
+};
 
-                                fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options).then(response2 => response.json()).then(response => {
-                                    console.log('response', response);
-                                }).catch(err => {
-                                    console.log(err)
-                                })
+fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
+  .then(response => response.json())
+  .then(response => 
+  {
+      if(response.verificationStatus == "NOT VERIFIED"){
+          alert("Invalid BVN")
 
-                        // if (response => response.verificationStatus != "VERIFIED") {
-                        //     document.getElementById("on").style.display = "block";
-                        //     document.getElementById("dis").style.display = "none";
-                        //     Swal.fire({
-                        //         title: 'Error!',
-                        //         text: 'Please the NIN of garantor1 does not exist ' +
-                        //             amt +
-                        //             '\nProvide a valid garantor NIN number',
-                        //         imageUrl: 'err.gif',
-                        //         imageWidth: 300,
-                        //         imageHeight: 150,
-                        //         imageAlt: 'error!',
-                        //     });
+      }
+      else{
+        document.getElementById("dis").style.display="none";
+    document.getElementById("on").style.display="block";
+        const options = {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    userid: '1644416326286',
+    apiKey: 'C9bnOwkMY95pLtrTpIht',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "searchParameter": bvn2,
+    "transactionReference": "",
+    "verificationType":"BVN-FULL-DETAILS"
+  })
+};
 
-                        } else {
+fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
+  .then(response => response.json())
+  .then(response => 
+  {
+      if(response.verificationStatus == "NOT VERIFIED"){
+          alert("Invalid BVN2")
 
-
-                            const options = {
-                                method: 'POST',
-                                headers: {
-                                    Accept: 'application/json',
-                                    userid: '1644416326286',
-                                    apiKey: 'C9bnOwkMY95pLtrTpIht',
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({searchParameter: bvn2, verificationType: 'BVN-FULL-DETAILS'})
-                                };
-
-                                // fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
-                                // .then(response => response.json())
-                                // .then(response => console.log(response))
-                                // .catch(err => console.error(err));
-
-                                fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options).then(response2 => response2.json()).then(response2 => {
-                                    console.log('response', response2);
-                                }).catch(err => {
-                                    console.log(err)
-                                })
-
-
-                            // if (response2 => response2.verificationStatus != "VERIFIED") {
-                            //     document.getElementById("on").style.display = "none";
-                            //     document.getElementById("dis").style.display = "block";
-                            //     Swal.fire({
-                            //         title: 'Error!',
-                            //         text: 'Please the NIN of garantor2 does not exist ' +
-                            //             amt +
-                            //             '\nProvide a valid garantor NIN number',
-                            //         imageUrl: 'err.gif',
-                            //         imageWidth: 300,
-                            //         imageHeight: 150,
-                            //         imageAlt: 'error!',
-                            //     });
-
-                            } else {
-                                $.ajax({
-                                    type: 'post',
-                                    url: 'process.php',
-                                    data: {
-                                        amount: amt,
-                                        nin1: bvn1,
-                                        nin2: bvn2,
-                                        ltype: type,
-                                        location: country,
-                                        phone: num,
-                                        fname: name
-                                    },
-                                    success: function (response) {
-                                        document.getElementById("dis").style.display = "none";
-                                        document.getElementById("on").style.display = "block";
-                                        if (response == "success") {
-                                            Swal.fire({
-                                                title: 'Successful!',
-                                                text: 'You have successfully applied for  a loan of ' +
-                                                    amt +
-                                                    '\nPlease be patient while we process your loan we will get back to you',
-                                                imageUrl: 'cong2.gif',
-                                                imageWidth: 400,
-                                                imageHeight: 200,
-                                                imageAlt: 'Congrats!',
-                                            });
-                                        } else {
-                                            Swal.fire({
-                                                title: 'Error!',
-                                                text: 'oops an error occured! try again later',
-                                                imageUrl: 'err.gif',
-                                                imageWidth: 400,
-                                                imageHeight: 200,
-                                                imageAlt: 'error!',
-                                            });
-                                        }
-                                    }
-                                });
-                            }
-
-                        }
-                    }
-                },
-
-                function fail(data, status) {
-                    console.log('Request failed.  Returned status of',
-                        status);
-                }
-            );
+      }
+      else{
+        $.ajax({
+ type: 'post',
+ url: 'process.php',
+ data: {
+  amount:amt,
+  nin1:bvn1,
+  nin2:bvn2,
+  ltype:type,
+  location:country,
+  phone:num,
+  fname:name
+ },
+ success: function (response) {
+    
+    if(response=="success"){
+        Swal.fire({
+  title: 'Successful!',
+  text: 'You have successfully applied for  a loan of '+amt +'\nPlease be patient while we process your loan we will get back to you',
+  imageUrl: 'cong2.gif',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Congrats!',
+  });
     }
+    else{
+ Swal.fire({
+  title: 'Error!',
+  text: 'oops an error occured! try again later',
+  imageUrl: 'err.gif',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'error!',
+});
+ }
+}
+ }); 
 
-</script>
+      }
+  }
+  )
+  .catch(err => console.error(err));
+
+      }
+  }
+  )
+  .catch(err => console.error(err));
+            document.getElementById("on").style.display="none";
+            document.getElementById("dis").style.display="block";
+  
+}
+          
+},
+
+      function fail(data, status) {
+          console.log('Request failed.  Returned status of',
+                      status);
+      }
+  );
+}
+
+    </script>
 </body>
 
 </html>
