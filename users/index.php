@@ -126,9 +126,9 @@
 
                                 <tr>
                                     <td>$<?= $amount; ?></td>
-                                    <td><?= date('d-M-Y', strtotime($date)); ?></td>
+                                    <td><?= date('d-M-Y', strtotime($Date)); ?></td>
                                     <td>
-                                        <?php echo ($approve == 1) ? "<button class='btn btn-success btn-sm'>Approved</button>" : "<button class='btn btn-danger btn-sm'>Declined</button>" ?>
+                                        <?php echo ($approve == 1) ? "<button class='btn btn-success btn-sm'>Approved</button>" : "<button class='btn btn-warning btn-sm'>Pending</button>" ?>
                                     </td>
                                 </tr>
                 <?php } } else { ?>

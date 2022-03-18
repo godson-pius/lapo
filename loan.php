@@ -164,7 +164,7 @@ require_once 'inc/header.php';
                                         <img src="img/apply-loan/icon-4.1.png" alt="icon-1.2">
                                     </div>
                                     <div class="apply-content">
-                                        <span class="title">Add Guarantor NIN (1)</span>
+                                        <span class="title">Add Guarantor BVN (1)</span>
                                         <p class="d-flex"> <input class="w-100" name="bvn1" type="text" id="bvn1"
                                                 placeholder="nin number"> </p>
                                     </div>
@@ -178,7 +178,7 @@ require_once 'inc/header.php';
                                         <img src="img/apply-loan/icon-4.1.png" alt="icon-1.2">
                                     </div>
                                     <div class="apply-content">
-                                        <span class="title">Add Guarantor NIN (2)</span>
+                                        <span class="title">Add Guarantor BVN (2)</span>
                                         <p class="d-flex"> <input class="w-100" name="bvn1" type="text" id="bvn2"
                                                 placeholder="nin number"> </p>
                                     </div>
@@ -538,12 +538,12 @@ num = phoneInput.getNumber();
 
 if((bvn1.length != 11)||(/^\d+$/.test(bvn1) != true)){
 
-    alert("Invalid NIN number for garantor 1. \n\nPlease enter a valid garantor's NIN number")
+    alert("Invalid BVN number for garantor 1. \n\nPlease enter a valid garantor's BVN number")
 }
 else{
     if((bvn2.length != 11)||(/^\d+$/.test(bvn2) != true)){
 
-    alert("Invalid NIN number for garantor 2. \n\nPlease enter a valid garantor's NIN number")
+    alert("Invalid BVN number for garantor 2. \n\nPlease enter a valid garantor's BVN number")
 }
 else{
     if(amount < 50){

@@ -37,6 +37,17 @@
         }
     }
 
+    function getApproved() {
+        global $link;
+
+        $sql = "SELECT * FROM loan_requests INNER JOIN users ON loan_requests.user_id = users.id WHERE approve = 1";
+        $query = mysqli_query($link, $sql);
+
+        if (mysqli_num_rows($query) > 0) {
+            return $query;
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -134,11 +145,70 @@
                                     <?= $garantor2; ?>
                                     </button>
                                 </td>
-                                <td><?= date('d-M-Y', strtotime($date)); ?></td>
+                                <td><?= date('d-M-Y', strtotime($Date)); ?></td>
                                 <td>
                                     <button id="approve" onclick="approveLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-success btn-sm">Approve</button>
                                     <button id="decline" onclick="declineLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-danger btn-sm">Disapprove</button>
                                 </td>
+                            </tr>
+                    
+                <?php } } else { ?>
+                    <tr>
+                                <td style="color: red;">No Loan to approve!</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                <?php } ?>
+            </table>
+
+             <!-- Modal -->
+            <div class="bg-dark rounded p-3 shadow opacity-70" id="BvnContainer" style="display: none;">
+                <span class="text-danger d-flex flex-row-reverse" id="previewBvn" style="font-size: 30px; cursor: pointer">&times;</span>
+                <img width="100%" height="400" style="object-fit: contain" src="../img/blog/article-3.png" id="BvnImg" alt="BVN DETAILS" srcset="">
+               
+            </div>
+            <progress class="p-2" id="loader" style="width: 100%; display: none" max="100"></progress>
+        </div>
+
+        <!-- Approved Loans -->
+        <div class="approve mt-5">
+            <h5>Approved Loans</h5>
+            <hr>
+
+            <table class="table table-responsiveness mt-2">
+                <tr>
+                    <th>User</th>
+                    <th>Amount</th>
+                    <th>Guarantor 1</th>
+                    <th>Guarantor 2</th>
+                    <th>Date</th>
+                    <!-- <th>Action</th> -->
+                </tr>
+
+                <?php
+                    $loans = getApproved();
+                    if (!empty($loans)) {
+                        foreach ($loans as $loan) {
+                            extract($loan); ?>
+                            <tr>
+                                <td><?= $fullname; ?></td>
+                                <td>$<?= $amount; ?></td>
+                                <td>
+                                    <button data-bvn="<?= $garantor1; ?>" onclick="viewBvnDetails(this)" type="button" class="btn btn-info">
+                                    <?= $garantor1; ?>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button data-bvn="<?= $garantor2; ?>" onclick="viewBvnDetails(this)" type="button" class="btn btn-warning">
+                                    <?= $garantor2; ?>
+                                    </button>
+                                </td>
+                                <td><?= date('d-M-Y', strtotime($Date)); ?></td>
+                                <!-- <td>
+                                    <button id="approve" onclick="approveLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-success btn-sm">Approve</button>
+                                    <button id="decline" onclick="declineLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-danger btn-sm">Disapprove</button>
+                                </td> -->
                             </tr>
                     
                 <?php } } else { ?>
