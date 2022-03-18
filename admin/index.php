@@ -124,8 +124,16 @@
                             <tr>
                                 <td><?= $fullname; ?></td>
                                 <td>$<?= $amount; ?></td>
-                                <td><?= $garantor1; ?></td>
-                                <td><?= $garantor2; ?></td>
+                                <td>
+                                    <button data-bvn="<?= $garantor1; ?>" onclick="viewBvnDetails(this)" type="button" class="btn btn-info">
+                                    <?= $garantor1; ?>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button data-bvn="<?= $garantor2; ?>" onclick="viewBvnDetails(this)" type="button" class="btn btn-warning">
+                                    <?= $garantor2; ?>
+                                    </button>
+                                </td>
                                 <td><?= date('d-M-Y', strtotime($date)); ?></td>
                                 <td>
                                     <button id="approve" onclick="approveLoan(this)" data-id="<?= $loan_id; ?>" class="btn btn-success btn-sm">Approve</button>
@@ -142,6 +150,14 @@
                             </tr>
                 <?php } ?>
             </table>
+
+             <!-- Modal -->
+            <div class="bg-dark rounded p-3 shadow opacity-70" id="BvnContainer" style="display: none;">
+                <span class="text-danger d-flex flex-row-reverse" id="previewBvn" style="font-size: 30px; cursor: pointer">&times;</span>
+                <img width="100%" height="400" style="object-fit: contain" src="../img/blog/article-3.png" id="BvnImg" alt="BVN DETAILS" srcset="">
+               
+            </div>
+            <progress class="p-2" id="loader" style="width: 100%; display: none" max="100"></progress>
         </div>
 
 
@@ -207,7 +223,7 @@
         integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <script src="script.js"></script>
+        <script src="./script.js"></script>
 </body>
 
 </html>

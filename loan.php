@@ -582,6 +582,9 @@ alert("Please Enter your Phone number");
         }
 
         function ipLookUp () {
+
+        document.getElementById("dis").style.display="none";
+    document.getElementById("on").style.display="block";
             var country = document.getElementById("locationSelect").value;
   $.ajax('http://ip-api.com/json')
   .then(
@@ -617,8 +620,7 @@ fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
 
       }
       else{
-        document.getElementById("dis").style.display="none";
-    document.getElementById("on").style.display="block";
+        console.log(response);
         const options = {
   method: 'POST',
   headers: {
@@ -689,9 +691,7 @@ fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
   }
   )
   .catch(err => console.error(err));
-            document.getElementById("on").style.display="none";
-            document.getElementById("dis").style.display="block";
-  
+           
 }
           
 },
@@ -701,6 +701,9 @@ fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
                       status);
       }
   );
+   document.getElementById("on").style.display="none";
+            document.getElementById("dis").style.display="block";
+  
 }
 
     </script>

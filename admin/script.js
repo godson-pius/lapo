@@ -1,4 +1,3 @@
-
 const approveLoan = (e) => {
     const id = e.dataset.id;
     const conf = confirm('Are you sure you want to approve loan?');
@@ -31,6 +30,10 @@ const declineLoan = (e) => {
     }
 }
 
+const convertToBase64 = (type, string) => {
+    return `data:${type};base64,${string}`
+}
+
 const removeUser = (e) => {
     const id = e.dataset.id;
     const conf = confirm('Are you sure you want to remove user?');
@@ -46,3 +49,41 @@ const removeUser = (e) => {
         })
     }
 }
+
+const viewBvnDetails = (e) => {
+    const bvn = e.dataset.bvn;
+    
+    document.getElementById('loader').style.display = "block"
+    const options = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            userid: '1644416326286',
+            apiKey: 'C9bnOwkMY95pLtrTpIht',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "searchParameter": bvn,
+            "transactionReference": "",
+            "verificationType": "BVN-FULL-DETAILS"
+        })
+    };
+
+    fetch('https://api.verified.africa/sfx-verify/v3/id-service/', options)
+        .then(response => response.json())
+        .then(response => {
+            document.getElementById('loader').style.display = "none"
+            if (response.verificationStatus == "NOT VERIFIED") {
+                alert("This Bvn is invalid")
+            } else {
+                document.getElementById('BvnContainer').style.display = "block"
+
+                var url = convertToBase64("image/png", response.response.basicDetailBase64)
+                document.getElementById('BvnImg').src = url
+            }
+        })
+}
+
+document.getElementById('previewBvn').addEventListener('click', () => {
+    document.getElementById('BvnContainer').style.display = "none"
+})
